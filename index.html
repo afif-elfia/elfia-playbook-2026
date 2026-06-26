@@ -3,780 +3,311 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elfia Team Playbook 2026</title>
+<title>Kingdom of Elfia — Living Strategy Document 2026</title>
 <style>
-/* Font fallback stacks while dynamic fonts load */
-
-:root {
-  --gold: #c9a84c;
-  --gold-light: #e8c96a;
-  --gold-dim: rgba(201,168,76,0.15);
-  --ember: #c44a24;
-  --ember-dim: rgba(196,74,36,0.12);
-  --moss: #4a7a44;
-  --moss-dim: rgba(74,122,68,0.12);
-  --silver: #7a8fa6;
-  --silver-light: #afc3d4;
-  --ink: #0d0b18;
-  --ink-mid: #171528;
-  --ink-light: #1f1c35;
-  --parchment: #f0e6cc;
-  --parchment-dim: rgba(240,230,204,0.07);
-  --violet: #6b4fa0;
-  --violet-dim: rgba(107,79,160,0.12);
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  background: var(--ink);
-  color: var(--parchment);
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 80px 40px;
-  position: relative;
-  background: radial-gradient(ellipse at 50% 60%, #1e1040 0%, var(--ink) 70%);
-  overflow: hidden;
-}
-.hero-stars {
-  position: absolute; inset: 0;
-  background-image:
-    radial-gradient(1px 1px at 15% 20%, rgba(201,168,76,0.6) 0%, transparent 100%),
-    radial-gradient(1px 1px at 80% 15%, rgba(175,195,212,0.4) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 60% 70%, rgba(201,168,76,0.3) 0%, transparent 100%),
-    radial-gradient(1px 1px at 30% 80%, rgba(175,195,212,0.3) 0%, transparent 100%),
-    radial-gradient(1px 1px at 90% 50%, rgba(201,168,76,0.4) 0%, transparent 100%),
-    radial-gradient(1px 1px at 45% 35%, rgba(255,255,255,0.2) 0%, transparent 100%),
-    radial-gradient(1px 1px at 70% 85%, rgba(175,195,212,0.3) 0%, transparent 100%);
-}
-.hero-eyebrow {
-  font-family: 'Inter', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: var(--gold);
-  opacity: 0.7;
-  margin-bottom: 24px;
-}
-.hero-title {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(36px, 6vw, 80px);
-  font-weight: 900;
-  line-height: 1.0;
-  color: var(--gold-light);
-  text-shadow: 0 0 60px rgba(201,168,76,0.4);
-  margin-bottom: 8px;
-  letter-spacing: 1px;
-}
-.hero-title span {
-  display: block;
-  font-size: clamp(20px, 3vw, 40px);
-  font-weight: 400;
-  color: var(--parchment);
-  opacity: 0.8;
-  margin-top: 8px;
-}
-.hero-sub {
-  font-family: 'Crimson Pro', serif;
-  font-size: clamp(16px, 2vw, 20px);
-  font-style: italic;
-  color: var(--silver-light);
-  max-width: 600px;
-  margin: 24px auto 48px;
-  font-weight: 300;
-}
-.hero-rule {
-  width: 1px;
-  height: 60px;
-  background: linear-gradient(180deg, var(--gold), transparent);
-  margin: 0 auto 40px;
-}
-.hero-north-star {
-  background: rgba(201,168,76,0.08);
-  border: 1px solid rgba(201,168,76,0.3);
-  border-radius: 6px;
-  padding: 20px 32px;
-  max-width: 640px;
-  font-family: 'Cinzel', serif;
-  font-size: clamp(14px, 2vw, 18px);
-  font-weight: 600;
-  color: var(--gold-light);
-  letter-spacing: 0.5px;
-  line-height: 1.5;
-}
-
-/* ── TEAM STRIP ── */
-.team-strip {
-  background: var(--ink-mid);
-  border-top: 1px solid rgba(201,168,76,0.15);
-  border-bottom: 1px solid rgba(201,168,76,0.15);
-  padding: 32px 40px;
-  overflow-x: auto;
-}
-.team-strip-inner {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.team-pill {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--parchment-dim);
-  border: 1px solid rgba(201,168,76,0.2);
-  border-radius: 40px;
-  padding: 8px 16px;
-  white-space: nowrap;
-}
-.team-pill .icon { font-size: 16px; }
-.team-pill .name {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--parchment);
-}
-.team-pill .role {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  color: var(--silver);
-}
-
-/* ── SECTIONS ── */
-.page-section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 40px;
-  border-bottom: 1px solid rgba(201,168,76,0.08);
-}
-.section-number {
-  font-family: 'Cinzel', serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--gold);
-  opacity: 0.5;
-  margin-bottom: 6px;
-}
-.section-heading {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(22px, 3vw, 38px);
-  font-weight: 700;
-  color: var(--parchment);
-  margin-bottom: 8px;
-  line-height: 1.15;
-}
-.section-heading em {
-  color: var(--gold-light);
-  font-style: normal;
-}
-.section-lead {
-  font-family: 'Crimson Pro', serif;
-  font-size: 18px;
-  font-style: italic;
-  color: var(--silver-light);
-  margin-bottom: 40px;
-  font-weight: 300;
-  max-width: 680px;
-}
-
-/* ── CARDS ── */
-.cards { display: grid; gap: 16px; margin-bottom: 32px; }
-.cards-2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
-.cards-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.cards-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-
-.card {
-  background: var(--ink-light);
-  border: 1px solid rgba(201,168,76,0.15);
-  border-radius: 8px;
-  padding: 24px;
-  position: relative;
-  overflow: hidden;
-}
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--gold), transparent);
-}
-.card.ember::before { background: linear-gradient(90deg, var(--ember), transparent); }
-.card.moss::before { background: linear-gradient(90deg, var(--moss), transparent); }
-.card.silver::before { background: linear-gradient(90deg, var(--silver), transparent); }
-.card.violet::before { background: linear-gradient(90deg, var(--violet), transparent); }
-
-.card-icon { font-size: 28px; margin-bottom: 12px; display: block; }
-.card-tag {
-  font-family: 'Inter', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 6px;
-}
-.card-tag.ember { color: var(--ember); }
-.card-tag.moss { color: var(--moss); }
-.card-tag.silver { color: var(--silver-light); }
-.card-tag.violet { color: #a07ad0; }
-.card h3 {
-  font-family: 'Cinzel', serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--parchment);
-  margin-bottom: 10px;
-  line-height: 1.3;
-}
-.card p, .card li {
-  font-family: 'Crimson Pro', serif;
-  font-size: 15px;
-  color: var(--silver-light);
-  font-weight: 300;
-  line-height: 1.65;
-}
-.card ul { list-style: none; padding: 0; }
-.card ul li { padding: 3px 0 3px 16px; position: relative; }
-.card ul li::before { content: '◆'; position: absolute; left: 0; font-size: 7px; top: 8px; color: var(--gold); }
-.card ul li.ember::before { color: var(--ember); }
-.card ul li.moss::before { color: var(--moss); }
-
-/* ── FLOW ── */
-.flow {
-  display: flex;
-  flex-wrap: wrap;
-  background: var(--ink-light);
-  border: 1px solid rgba(201,168,76,0.15);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 32px;
-}
-.flow-step {
-  flex: 1;
-  min-width: 100px;
-  padding: 20px 14px;
-  text-align: center;
-  border-right: 1px solid rgba(201,168,76,0.08);
-  position: relative;
-}
-.flow-step:last-child { border-right: none; }
-.flow-step::after {
-  content: '→';
-  position: absolute;
-  right: -8px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--gold);
-  opacity: 0.4;
-  font-size: 12px;
-  z-index: 1;
-}
-.flow-step:last-child::after { display: none; }
-.flow-num {
-  font-family: 'Cinzel', serif;
-  font-size: 20px;
-  font-weight: 900;
-  color: rgba(201,168,76,0.15);
-  display: block;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.flow-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: block;
-  margin-bottom: 4px;
-}
-.flow-desc {
-  font-family: 'Crimson Pro', serif;
-  font-size: 13px;
-  color: var(--silver);
-  font-weight: 300;
-}
-
-/* ── TIERS ── */
-.tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 32px; }
-.tier {
-  border-radius: 10px;
-  padding: 28px 24px;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(201,168,76,0.2);
-}
-.tier.free { background: linear-gradient(145deg, #1a1830, #12102a); }
-.tier.standard { background: linear-gradient(145deg, #1a1305, #241d10); border-color: rgba(201,168,76,0.4); }
-.tier.premium { background: linear-gradient(145deg, #1a0d1a, #2a1228); border-color: rgba(107,79,160,0.5); }
-.tier-badge {
-  font-family: 'Inter', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.tier.free .tier-badge { color: var(--silver-light); }
-.tier.standard .tier-badge { color: var(--gold); }
-.tier.premium .tier-badge { color: #a07ad0; }
-.tier-price {
-  font-family: 'Cinzel', serif;
-  font-size: 32px;
-  font-weight: 900;
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.tier.free .tier-price { color: var(--silver-light); }
-.tier.standard .tier-price { color: var(--gold-light); }
-.tier.premium .tier-price { color: #c09de8; }
-.tier-period {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  color: var(--silver);
-  margin-bottom: 20px;
-}
-.tier-name {
-  font-family: 'Cinzel', serif;
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--parchment);
-  margin-bottom: 16px;
-}
-.tier ul { list-style: none; padding: 0; }
-.tier ul li {
-  font-family: 'Crimson Pro', serif;
-  font-size: 14px;
-  color: var(--silver-light);
-  padding: 5px 0 5px 18px;
-  position: relative;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-}
-.tier ul li:last-child { border-bottom: none; }
-.tier ul li::before { content: '✓'; position: absolute; left: 0; font-size: 11px; top: 6px; }
-.tier.free ul li::before { color: var(--silver); }
-.tier.standard ul li::before { color: var(--gold); }
-.tier.premium ul li::before { color: #a07ad0; }
-
-/* ── HIGHLIGHT BOX ── */
-.highlight {
-  border-radius: 6px;
-  padding: 20px 24px;
-  margin-bottom: 24px;
-}
-.highlight.gold { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.3); border-left: 3px solid var(--gold); }
-.highlight.ember { background: var(--ember-dim); border: 1px solid rgba(196,74,36,0.3); border-left: 3px solid var(--ember); }
-.highlight.moss { background: var(--moss-dim); border: 1px solid rgba(74,122,68,0.3); border-left: 3px solid var(--moss); }
-.highlight.violet { background: var(--violet-dim); border: 1px solid rgba(107,79,160,0.3); border-left: 3px solid var(--violet); }
-.highlight-title {
-  font-family: 'Cinzel', serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-}
-.highlight.gold .highlight-title { color: var(--gold); }
-.highlight.ember .highlight-title { color: var(--ember); }
-.highlight.moss .highlight-title { color: var(--moss); }
-.highlight.violet .highlight-title { color: #a07ad0; }
-.highlight p {
-  font-family: 'Crimson Pro', serif;
-  font-size: 15px;
-  color: var(--parchment);
-  font-weight: 300;
-  line-height: 1.7;
-}
-
-/* ── PASSPORT VISUAL ── */
-.passport-visual {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-bottom: 32px;
-  align-items: start;
-}
-.passport-book {
-  background: linear-gradient(145deg, #1a3a6a, #0d2040);
-  border: 1px solid rgba(100,150,220,0.3);
-  border-radius: 10px;
-  padding: 28px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.passport-book::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 50%; transform: translateX(-50%);
-  width: 80%; height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.6), transparent);
-}
-.passport-emblem { font-size: 48px; margin-bottom: 12px; display: block; }
-.passport-title {
-  font-family: 'Cinzel', serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-.stamp-row { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
-.stamp {
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  border: 2px dashed rgba(201,168,76,0.4);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px;
-  background: rgba(201,168,76,0.04);
-}
-.stamp.earned {
-  border-color: var(--gold);
-  background: rgba(201,168,76,0.12);
-  border-style: solid;
-}
-.passport-phase {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.phase-row {
-  background: var(--ink-light);
-  border: 1px solid rgba(201,168,76,0.15);
-  border-radius: 6px;
-  padding: 14px 18px;
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 12px;
-  align-items: center;
-}
-.phase-num {
-  font-family: 'Cinzel', serif;
-  font-size: 20px;
-  font-weight: 900;
-  color: rgba(201,168,76,0.3);
-  text-align: center;
-}
-.phase-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--parchment);
-  margin-bottom: 2px;
-}
-.phase-desc {
-  font-family: 'Crimson Pro', serif;
-  font-size: 13px;
-  color: var(--silver);
-  font-weight: 300;
-}
-
-/* ── AI TOOLS ── */
-.ai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 32px; }
-.ai-tool {
-  background: var(--ink-light);
-  border: 1px solid rgba(107,79,160,0.25);
-  border-radius: 6px;
-  padding: 16px 18px;
-}
-.ai-tool-name {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: #c09de8;
-  margin-bottom: 4px;
-}
-.ai-tool-use {
-  font-family: 'Crimson Pro', serif;
-  font-size: 13px;
-  color: var(--silver);
-  font-weight: 300;
-}
-.ai-tool-owner {
-  font-family: 'Inter', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--silver);
-  opacity: 0.6;
-  margin-top: 6px;
-}
-
-/* ── DIVIDER ── */
-.divider {
-  display: flex; align-items: center; gap: 16px;
-  margin: 40px 0; opacity: 0.3;
-}
-.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
-.divider::after { background: linear-gradient(90deg, var(--gold), transparent); }
-.divider span { font-family: 'Cinzel', serif; font-size: 12px; color: var(--gold); }
-
-/* ── TABLE ── */
-.scroll-table { overflow-x: auto; margin-bottom: 32px; border-radius: 6px; }
-table { width: 100%; border-collapse: collapse; font-family: 'Crimson Pro', serif; font-size: 14px; }
-thead th { background: #0d0b1f; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); padding: 12px 16px; text-align: left; border-bottom: 1px solid rgba(201,168,76,0.2); white-space: nowrap; }
-tbody tr { border-bottom: 1px solid rgba(201,168,76,0.06); }
-tbody tr:hover { background: rgba(201,168,76,0.03); }
-tbody td { padding: 11px 16px; color: var(--silver-light); vertical-align: top; line-height: 1.5; }
-tbody td:first-child { color: var(--parchment); font-weight: 500; }
-.cell-gold { color: var(--gold) !important; font-weight: 600; }
-.cell-ember { color: var(--ember) !important; }
-.cell-moss { color: #6aaa64 !important; }
-.cell-violet { color: #a07ad0 !important; }
-
-/* ── FOOTER ── */
-.doc-footer {
-  text-align: center;
-  padding: 60px 40px;
-  border-top: 1px solid rgba(201,168,76,0.1);
-  background: var(--ink-mid);
-}
-.doc-footer p {
-  font-family: 'Crimson Pro', serif;
-  font-style: italic;
-  font-size: 16px;
-  color: var(--silver);
-  font-weight: 300;
-}
-.doc-footer strong { color: var(--gold-light); font-style: normal; }
-
-@media (max-width: 700px) {
-  .hero { padding: 60px 24px; }
-  .page-section { padding: 60px 24px; }
-  .passport-visual { grid-template-columns: 1fr; }
-  .flow-step { min-width: 80px; }
-  .tiers { grid-template-columns: 1fr; }
-}
-
-/* ── FEEDBACK WIDGET ── */
-#feedback-btn {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 1000;
-  background: var(--gold);
-  color: var(--ink);
-  border: none;
-  border-radius: 50px;
-  padding: 12px 22px;
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  cursor: pointer;
-  box-shadow: 0 4px 24px rgba(201,168,76,0.4);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-#feedback-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 32px rgba(201,168,76,0.55);
-}
-
-#feedback-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-  z-index: 1001;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-}
-#feedback-overlay.open { display: flex; }
-
-#feedback-modal {
-  background: #1a1830;
-  border: 1px solid rgba(201,168,76,0.3);
-  border-radius: 12px;
-  padding: 36px;
-  width: 100%;
-  max-width: 480px;
-  position: relative;
-  box-shadow: 0 16px 64px rgba(0,0,0,0.6);
-}
-#feedback-modal h2 {
-  font-family: 'Cinzel', serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--gold-light);
-  margin-bottom: 6px;
-}
-#feedback-modal .modal-sub {
-  font-family: 'Crimson Pro', serif;
-  font-size: 14px;
-  font-style: italic;
-  color: var(--silver);
-  margin-bottom: 24px;
-}
-#feedback-modal label {
-  display: block;
-  font-family: 'Inter', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 6px;
-}
-#feedback-modal input,
-#feedback-modal select,
-#feedback-modal textarea {
-  width: 100%;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(201,168,76,0.2);
-  border-radius: 6px;
-  padding: 10px 14px;
-  color: var(--parchment);
-  font-family: 'Crimson Pro', serif;
-  font-size: 15px;
-  margin-bottom: 18px;
-  outline: none;
-  transition: border-color 0.2s;
-}
-#feedback-modal input:focus,
-#feedback-modal select:focus,
-#feedback-modal textarea:focus {
-  border-color: rgba(201,168,76,0.6);
-}
-#feedback-modal select option {
-  background: #1a1830;
-  color: var(--parchment);
-}
-#feedback-modal textarea { resize: vertical; min-height: 120px; }
-.modal-actions {
-  display: flex;
-  gap: 12px;
-  margin-top: 4px;
-}
-.modal-actions button {
-  flex: 1;
-  padding: 11px 0;
-  border-radius: 6px;
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  cursor: pointer;
-  border: none;
-  transition: opacity 0.15s;
-}
-.modal-actions button:hover { opacity: 0.85; }
-#btn-submit {
-  background: var(--gold);
-  color: var(--ink);
-}
-#btn-cancel {
-  background: rgba(255,255,255,0.06);
-  color: var(--silver-light);
-  border: 1px solid rgba(255,255,255,0.1) !important;
-}
-#feedback-close {
-  position: absolute;
-  top: 16px; right: 16px;
-  background: none;
-  border: none;
-  color: var(--silver);
-  font-size: 20px;
-  cursor: pointer;
-  line-height: 1;
-  padding: 4px;
-}
-#feedback-close:hover { color: var(--parchment); }
-#feedback-success {
-  display: none;
-  text-align: center;
-  padding: 12px 0 4px;
-}
-#feedback-success .success-icon { font-size: 40px; margin-bottom: 12px; display: block; }
-#feedback-success p {
-  font-family: 'Crimson Pro', serif;
-  font-size: 16px;
-  color: var(--silver-light);
-  font-style: italic;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+  :root {
+    --ink:#1a1410;--parchment:#f5edd8;--parchment-dark:#e8d9b8;--parchment-deep:#d4c090;
+    --dragon-gold:#c9a84c;--dragon-gold-light:#e8c96a;--ember:#8b2e12;--ember-light:#c44a24;
+    --midnight:#0f0d1a;--deep-navy:#1a1835;--silver-ley:#7a8fa6;--silver-light:#afc3d4;
+    --moss:#2d4a2a;--moss-light:#4a7a44;--shadow:rgba(15,13,26,0.85);
+    --glow-gold:rgba(201,168,76,0.3);--glow-ember:rgba(139,46,18,0.25);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Crimson Pro',Georgia,serif;background:var(--midnight);color:var(--parchment);min-height:100vh;overflow-x:hidden;}
+  .kingdom-header{background:linear-gradient(180deg,#0a0814 0%,#1a1435 40%,#0f0d1a 100%);border-bottom:1px solid var(--dragon-gold);padding:48px 40px 36px;text-align:center;position:relative;overflow:hidden;}
+  .kingdom-header::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:2px;background:linear-gradient(90deg,transparent,var(--dragon-gold),transparent);}
+  .kingdom-header::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:800px;height:1px;background:linear-gradient(90deg,transparent,var(--dragon-gold),transparent);}
+  .realm-seal{font-family:'Cinzel',serif;font-size:10px;font-weight:600;letter-spacing:6px;color:var(--dragon-gold);opacity:.7;text-transform:uppercase;margin-bottom:16px;}
+  .kingdom-title{font-family:'Cinzel',serif;font-size:clamp(28px,4vw,52px);font-weight:900;color:var(--dragon-gold-light);letter-spacing:2px;line-height:1.1;text-shadow:0 0 40px var(--glow-gold),0 2px 4px rgba(0,0,0,.8);margin-bottom:8px;}
+  .kingdom-subtitle{font-family:'Crimson Pro',serif;font-size:18px;font-weight:300;font-style:italic;color:var(--silver-light);letter-spacing:1px;margin-bottom:24px;}
+  .doc-meta{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;}
+  .doc-meta span{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--silver-ley);opacity:.8;}
+  .doc-meta span strong{color:var(--dragon-gold);font-weight:600;}
+  .nav-tabs{background:#0a0814;border-bottom:1px solid rgba(201,168,76,.2);display:flex;overflow-x:auto;scrollbar-width:none;position:sticky;top:0;z-index:100;}
+  .nav-tabs::-webkit-scrollbar{display:none;}
+  .nav-tab{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--silver-ley);padding:16px 22px;cursor:pointer;border:none;background:transparent;border-bottom:2px solid transparent;white-space:nowrap;transition:all .25s ease;flex-shrink:0;}
+  .nav-tab:hover{color:var(--parchment);}
+  .nav-tab.active{color:var(--dragon-gold);border-bottom-color:var(--dragon-gold);background:rgba(201,168,76,.05);}
+  .content-area{max-width:1400px;margin:0 auto;padding:40px 32px;}
+  .tab-panel{display:none;}.tab-panel.active{display:block;}
+  .section-banner{background:linear-gradient(135deg,#1a1435 0%,#0f1a2e 100%);border:1px solid rgba(201,168,76,.25);border-left:3px solid var(--dragon-gold);border-radius:4px;padding:28px 32px;margin-bottom:32px;position:relative;}
+  .section-banner::after{content:'';position:absolute;bottom:0;left:32px;right:32px;height:1px;background:linear-gradient(90deg,var(--dragon-gold),transparent);}
+  .section-eyebrow{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--dragon-gold);opacity:.7;margin-bottom:8px;}
+  .section-title{font-family:'Cinzel',serif;font-size:clamp(20px,2.5vw,32px);font-weight:700;color:var(--parchment);line-height:1.2;margin-bottom:6px;}
+  .section-desc{font-family:'Crimson Pro',serif;font-size:17px;font-weight:300;font-style:italic;color:var(--silver-light);}
+  .card-grid{display:grid;gap:20px;margin-bottom:32px;}
+  .card-grid-2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr));}
+  .card-grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+  .card-grid-4{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+  .lore-card{background:linear-gradient(145deg,#1e1830 0%,#12102a 100%);border:1px solid rgba(201,168,76,.2);border-radius:6px;padding:24px;position:relative;overflow:hidden;}
+  .lore-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--dragon-gold),transparent);}
+  .lore-card.ember-accent::before{background:linear-gradient(90deg,var(--ember-light),transparent);}
+  .lore-card.silver-accent::before{background:linear-gradient(90deg,var(--silver-ley),transparent);}
+  .lore-card.moss-accent::before{background:linear-gradient(90deg,var(--moss-light),transparent);}
+  .card-icon{font-size:28px;margin-bottom:12px;display:block;}
+  .card-label{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--dragon-gold);margin-bottom:6px;}
+  .card-label.ember{color:var(--ember-light);}.card-label.silver{color:var(--silver-light);}.card-label.moss{color:var(--moss-light);}
+  .card-title{font-family:'Cinzel',serif;font-size:16px;font-weight:600;color:var(--parchment);margin-bottom:10px;line-height:1.3;}
+  .card-body{font-family:'Crimson Pro',serif;font-size:15px;line-height:1.7;color:var(--silver-light);font-weight:300;}
+  .card-body ul{list-style:none;padding:0;}
+  .card-body ul li{padding:4px 0 4px 18px;position:relative;font-size:14px;}
+  .card-body ul li::before{content:'◆';position:absolute;left:0;color:var(--dragon-gold);font-size:8px;top:7px;}
+  .card-body ul li.ember::before{color:var(--ember-light);}.card-body ul li.silver::before{color:var(--silver-light);}.card-body ul li.moss::before{color:var(--moss-light);}
+  .timeline{position:relative;padding-left:32px;margin-bottom:32px;}
+  .timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--dragon-gold),rgba(201,168,76,.1));}
+  .timeline-item{position:relative;margin-bottom:28px;}
+  .timeline-item::before{content:'';position:absolute;left:-28px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--dragon-gold);border:2px solid var(--midnight);box-shadow:0 0 8px var(--glow-gold);}
+  .timeline-item.ember::before{background:var(--ember-light);box-shadow:0 0 8px var(--glow-ember);}
+  .timeline-item.silver::before{background:var(--silver-ley);}
+  .timeline-item.moss::before{background:var(--moss-light);}
+  .timeline-date{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--dragon-gold);margin-bottom:4px;}
+  .timeline-date.ember{color:var(--ember-light);}.timeline-date.silver{color:var(--silver-light);}
+  .timeline-title{font-family:'Cinzel',serif;font-size:15px;font-weight:600;color:var(--parchment);margin-bottom:6px;}
+  .timeline-body{font-family:'Crimson Pro',serif;font-size:14px;line-height:1.7;color:var(--silver-light);font-weight:300;}
+  .timeline-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+  .tag{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;border:1px solid;}
+  .tag-gold{color:var(--dragon-gold);border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.08);}
+  .tag-ember{color:var(--ember-light);border-color:rgba(196,74,36,.4);background:rgba(196,74,36,.08);}
+  .tag-silver{color:var(--silver-light);border-color:rgba(175,195,212,.4);background:rgba(175,195,212,.08);}
+  .tag-moss{color:var(--moss-light);border-color:rgba(74,122,68,.4);background:rgba(74,122,68,.08);}
+  .tag-parchment{color:var(--parchment-dark);border-color:rgba(245,237,216,.3);background:rgba(245,237,216,.05);}
+  .scroll-table{overflow-x:auto;margin-bottom:32px;border-radius:6px;}
+  table{width:100%;border-collapse:collapse;font-family:'Crimson Pro',serif;font-size:14px;}
+  thead th{background:#0d0b1f;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--dragon-gold);padding:14px 16px;text-align:left;border-bottom:1px solid rgba(201,168,76,.3);white-space:nowrap;}
+  tbody tr{border-bottom:1px solid rgba(201,168,76,.08);transition:background .15s;}
+  tbody tr:hover{background:rgba(201,168,76,.04);}
+  tbody td{padding:12px 16px;color:var(--silver-light);vertical-align:top;line-height:1.5;}
+  tbody td:first-child{color:var(--parchment);font-weight:500;white-space:nowrap;}
+  .cell-gold{color:var(--dragon-gold)!important;font-weight:600;}.cell-ember{color:var(--ember-light)!important;}.cell-moss{color:var(--moss-light)!important;}.cell-silver{color:var(--silver-light)!important;}
+  /* BLESSING ITEM CARDS */
+  .blessing-item-card{background:linear-gradient(145deg,#1e1830,#12102a);border:1px solid rgba(201,168,76,.25);border-radius:8px;padding:22px 26px;margin-bottom:14px;display:grid;grid-template-columns:56px 1fr auto;gap:20px;align-items:center;}
+  .blessing-item-card.passport-card{border-color:rgba(201,168,76,.5);background:linear-gradient(145deg,#241d10,#1a1305);}
+  .blessing-item-card.holder-red{border-color:rgba(196,74,36,.45);background:linear-gradient(145deg,#1f1218,#120a0a);}
+  .blessing-item-card.holder-blue{border-color:rgba(122,143,166,.4);background:linear-gradient(145deg,#111828,#0d1420);}
+  .blessing-item-card.pin-card{border-color:rgba(74,122,68,.35);background:linear-gradient(145deg,#121c12,#0d1610);}
+  .blessing-item-icon{font-size:32px;text-align:center;}
+  .blessing-item-name{font-family:'Cinzel',serif;font-size:15px;font-weight:700;margin-bottom:5px;}
+  .blessing-item-desc{font-family:'Crimson Pro',serif;font-size:13px;color:var(--silver-light);font-weight:300;line-height:1.5;}
+  .blessing-item-rule{text-align:right;white-space:nowrap;}
+  .blessing-collect{font-family:'Cinzel',serif;font-size:22px;font-weight:900;display:block;line-height:1;}
+  .blessing-collect-label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--silver-ley);display:block;margin-top:3px;}
+  /* DELIVERY OPTIONS */
+  .delivery-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;}
+  .delivery-option{background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.2);border-radius:6px;padding:16px 20px;text-align:center;}
+  .delivery-option.festival{border-color:rgba(74,122,68,.4);background:rgba(74,122,68,.06);}
+  .delivery-option .d-icon{font-size:28px;display:block;margin-bottom:8px;}
+  .delivery-option .d-title{font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--parchment);margin-bottom:4px;}
+  .delivery-option .d-detail{font-family:'Crimson Pro',serif;font-size:13px;color:var(--silver-light);line-height:1.5;}
+  .delivery-option .d-price{font-family:'Cinzel',serif;font-size:18px;font-weight:900;display:block;margin-top:6px;}
+  /* CALENDAR STRIP */
+  .calendar-strip{background:#0d0b1f;border:1px solid rgba(201,168,76,.15);border-radius:8px;padding:24px;margin-bottom:32px;}
+  .calendar-strip-title{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--dragon-gold);margin-bottom:16px;}
+  .calendar-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
+  .calendar-row-label{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;width:160px;flex-shrink:0;color:var(--parchment-dark);}
+  .cal-dots{display:flex;gap:5px;flex-wrap:wrap;}
+  .cal-dot{width:18px;height:18px;border-radius:50%;border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.04);display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:7px;color:var(--silver-ley);}
+  .cal-dot.ag{background:var(--dragon-gold);border-color:var(--dragon-gold);color:var(--midnight);font-weight:700;}
+  .cal-dot.ar{background:var(--ember-light);border-color:var(--ember-light);color:#fff;font-weight:700;}
+  .cal-dot.ab{background:var(--silver-ley);border-color:var(--silver-ley);color:#fff;font-weight:700;}
+  .cal-dot.am{background:var(--moss-light);border-color:var(--moss-light);color:#fff;font-weight:700;}
+  .cal-dot.ap{background:#7a5c9a;border-color:#7a5c9a;color:#fff;font-weight:700;}
+  /* HIGHLIGHT BOX */
+  .highlight-box{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.3);border-radius:6px;padding:20px 24px;margin-bottom:24px;}
+  .highlight-box.ember-box{background:rgba(139,46,18,.08);border-color:rgba(196,74,36,.35);}
+  .highlight-box.silver-box{background:rgba(122,143,166,.06);border-color:rgba(122,143,166,.3);}
+  .highlight-box.moss-box{background:rgba(45,74,42,.1);border-color:rgba(74,122,68,.35);}
+  .highlight-box p{font-family:'Crimson Pro',serif;font-size:16px;line-height:1.7;color:var(--parchment);font-weight:300;}
+  .highlight-box .box-title{font-family:'Cinzel',serif;font-size:14px;font-weight:600;color:var(--dragon-gold);margin-bottom:8px;letter-spacing:1px;}
+  .highlight-box .box-title.ember{color:var(--ember-light);}.highlight-box .box-title.moss{color:var(--moss-light);}
+  /* NEWSLETTER */
+  .newsletter-block{background:linear-gradient(145deg,#1e1830,#12102a);border:1px solid rgba(201,168,76,.2);border-radius:8px;overflow:hidden;margin-bottom:24px;}
+  .newsletter-header{background:#0d0b1f;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(201,168,76,.2);flex-wrap:wrap;gap:12px;}
+  .newsletter-issue{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--dragon-gold);}
+  .newsletter-date{font-family:'Inter',sans-serif;font-size:11px;color:var(--silver-ley);}
+  .newsletter-body{padding:20px 24px;}
+  .newsletter-subject{font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:var(--parchment);margin-bottom:6px;}
+  .newsletter-preview{font-family:'Crimson Pro',serif;font-size:14px;font-style:italic;color:var(--silver-ley);margin-bottom:14px;}
+  .newsletter-sections{display:flex;flex-wrap:wrap;gap:8px;}
+  .nl-section{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;padding:4px 12px;border-radius:4px;background:rgba(201,168,76,.08);color:var(--parchment-dark);border:1px solid rgba(201,168,76,.2);}
+  .nl-section.primary{background:rgba(201,168,76,.15);border-color:rgba(201,168,76,.4);color:var(--dragon-gold);font-weight:700;}
+  .nl-section.story{background:rgba(74,122,68,.1);border-color:rgba(74,122,68,.3);color:var(--moss-light);}
+  .nl-section.warning{background:rgba(196,74,36,.1);border-color:rgba(196,74,36,.4);color:var(--ember-light);font-weight:700;}
+  /* CRITIQUE BOX */
+  .critique-box{background:rgba(139,46,18,.07);border:1px solid rgba(196,74,36,.3);border-left:3px solid var(--ember-light);border-radius:6px;padding:16px 20px;margin-top:14px;}
+  .critique-box .critique-title{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ember-light);margin-bottom:8px;}
+  .critique-box ul{list-style:none;padding:0;}
+  .critique-box ul li{font-family:'Crimson Pro',serif;font-size:14px;color:var(--silver-light);padding:3px 0 3px 16px;position:relative;line-height:1.5;}
+  .critique-box ul li::before{content:'→';position:absolute;left:0;color:var(--ember-light);font-size:12px;top:4px;}
+  /* MISC */
+  .lore-divider{display:flex;align-items:center;gap:16px;margin:36px 0;opacity:.4;}
+  .lore-divider::before,.lore-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--dragon-gold));}
+  .lore-divider::after{background:linear-gradient(90deg,var(--dragon-gold),transparent);}
+  .lore-divider span{font-family:'Cinzel',serif;font-size:14px;color:var(--dragon-gold);}
+  .blessing-tier{background:linear-gradient(145deg,#1e1830,#12102a);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:24px 28px;margin-bottom:16px;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;}
+  .blessing-tier.legendary{border-color:rgba(201,168,76,.5);background:linear-gradient(145deg,#241d10,#1a1305);box-shadow:0 0 20px rgba(201,168,76,.1);}
+  .blessing-tier.rare{border-color:rgba(139,46,18,.4);background:linear-gradient(145deg,#1f1218,#120a0a);}
+  .blessing-tier.uncommon{border-color:rgba(122,143,166,.3);}
+  .tier-visits{font-family:'Cinzel',serif;font-size:28px;font-weight:700;text-align:center;line-height:1;}
+  .tier-visits .unit{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;display:block;margin-top:4px;}
+  .tier-info .tier-name{font-family:'Cinzel',serif;font-size:16px;font-weight:700;margin-bottom:4px;}
+  .tier-info .tier-desc{font-family:'Crimson Pro',serif;font-size:14px;color:var(--silver-light);font-weight:300;line-height:1.5;}
+  .tier-value{text-align:right;white-space:nowrap;}
+  .tier-value .price{font-family:'Cinzel',serif;font-size:20px;font-weight:700;display:block;}
+  .tier-value .price-label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--silver-ley);display:block;margin-top:2px;}
+  .species-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:32px;}
+  .species-card{background:linear-gradient(145deg,#1e1830,#12102a);border:1px solid rgba(201,168,76,.15);border-radius:8px;padding:20px 16px;text-align:center;cursor:pointer;transition:all .25s;}
+  .species-card:hover{border-color:rgba(201,168,76,.4);background:linear-gradient(145deg,#261f3e,#18153a);transform:translateY(-2px);}
+  .species-icon{font-size:36px;display:block;margin-bottom:10px;}
+  .species-name{font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--parchment);margin-bottom:6px;}
+  .species-desc{font-family:'Crimson Pro',serif;font-size:13px;color:var(--silver-ley);line-height:1.5;font-weight:300;}
+  .flow-chain{display:flex;flex-wrap:wrap;align-items:center;margin-bottom:24px;background:linear-gradient(145deg,#1e1830,#12102a);border:1px solid rgba(201,168,76,.2);border-radius:8px;overflow:hidden;}
+  .flow-step{flex:1;min-width:120px;padding:16px 12px;text-align:center;border-right:1px solid rgba(201,168,76,.1);}
+  .flow-step:last-child{border-right:none;}
+  .flow-step-num{font-family:'Cinzel',serif;font-size:22px;font-weight:900;color:rgba(201,168,76,.15);display:block;line-height:1;margin-bottom:4px;}
+  .flow-step-label{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--dragon-gold);display:block;margin-bottom:4px;}
+  .flow-step-desc{font-family:'Crimson Pro',serif;font-size:13px;color:var(--silver-ley);font-weight:300;}
+  .card-mechanic-row{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:16px;}
+  .mini-card{background:linear-gradient(145deg,#2a1f10,#1a1305);border:1px solid rgba(201,168,76,.3);border-radius:6px;padding:12px 8px;text-align:center;}
+  .mini-card .card-art{width:100%;aspect-ratio:3/4;background:linear-gradient(145deg,#1a1530,#0d0b20);border-radius:4px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;font-size:24px;}
+  .mini-card .card-name{font-family:'Cinzel',serif;font-size:9px;font-weight:700;color:var(--parchment);margin-bottom:4px;}
+  .card-dots{display:flex;justify-content:center;gap:3px;}
+  .dot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);}
+  .dot.filled{background:var(--dragon-gold);border-color:var(--dragon-gold);box-shadow:0 0 4px var(--glow-gold);}
+  .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:32px;}
+  .kpi-block{background:linear-gradient(145deg,#1e1830,#12102a);border:1px solid rgba(201,168,76,.15);border-radius:8px;padding:20px;text-align:center;}
+  .kpi-number{font-family:'Cinzel',serif;font-size:32px;font-weight:900;color:var(--dragon-gold-light);display:block;line-height:1;margin-bottom:4px;text-shadow:0 0 20px var(--glow-gold);}
+  .kpi-label{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--silver-ley);}
+  @media(max-width:700px){
+    .content-area{padding:24px 16px;}
+    .blessing-item-card{grid-template-columns:1fr;text-align:center;}
+    .blessing-tier{grid-template-columns:1fr;text-align:center;}
+    .tier-value{text-align:center;}
+    .card-mechanic-row{grid-template-columns:repeat(3,1fr);}
+    .flow-step{min-width:80px;}
+    .delivery-grid{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
+<header class="kingdom-header">
+  <div class="realm-seal">Kingdom of Elfia · Living Strategy Document</div>
+  <h1 class="kingdom-title">From Festival to Living Kingdom</h1>
+  <p class="kingdom-subtitle">The complete strategic framework for Elfia 2026–2035</p>
+  <div class="doc-meta">
+    <span>Updated: <strong>June 2026</strong></span>
+    <span>Season: <strong>Arcen 2026</strong></span>
+    <span>Primary KPI: <strong>Citizens of Elfia</strong></span>
+    <span>Festival: <strong>19–20 Sep 2026</strong></span>
+    <span>Status: <strong>Live</strong></span>
+  </div>
+</header>
+<nav class="nav-tabs" id="mainNav">
+  <button class="nav-tab active" onclick="switchTab('vision')">⚔ Vision</button>
+  <button class="nav-tab" onclick="switchTab('citizenship')">🏛 Citizenship</button>
+  <button class="nav-tab" onclick="switchTab('tiers')">💎 Citizen Tiers</button>
+  <button class="nav-tab" onclick="switchTab('blessings')">✨ Daily Blessings</button>
+  <button class="nav-tab" onclick="switchTab('passport')">📘 Passport</button>
+  <button class="nav-tab" onclick="switchTab('cards')">🃏 Card Ecosystem</button>
+  <button class="nav-tab" onclick="switchTab('newsletter')">📜 Newsletter</button>
+  <button class="nav-tab" onclick="switchTab('calendar')">📅 Calendar</button>
+  <button class="nav-tab" onclick="switchTab('merchants')">🏪 Merchants & Guild</button>
+  <button class="nav-tab" onclick="switchTab('story')">🐉 Story & Anime</button>
+  <button class="nav-tab" onclick="switchTab('website')">🌍 Website & AI</button>
+  <button class="nav-tab" onclick="switchTab('royals')">👑 Royal Succession</button>
+  <button class="nav-tab" onclick="switchTab('team')">🧑‍🤝‍🧑 Team & Roles</button>
+  <button class="nav-tab" onclick="switchTab('roadmap')">🗺 Roadmap</button>
+</nav>
+<main class="content-area">
+<section class="tab-panel active" id="tab-vision">
+  <div class="section-banner"><div class="section-eyebrow">Strategic Foundation</div><h2 class="section-title">Kingdom of Elfia — The Big Vision</h2><p class="section-desc">People no longer visit Elfia. People belong to Elfia. People become Elfia.</p></div>
+  <div class="highlight-box" style="margin-bottom:32px;"><div class="box-title">The Core Shift</div><p>We are not building a better festival. We are building the world's first fantasy citizenship platform — a living kingdom that exists online, offline, inside stories, inside games, inside communities, inside memories, and across generations. The festival is one gateway into a much larger world.</p></div>
+  <div class="card-grid card-grid-3" style="margin-bottom:32px;">
+    <div class="lore-card"><span class="card-icon">🎪</span><div class="card-label">Now</div><div class="card-title">People Buy Tickets</div><div class="card-body">Visitors attend festivals. The relationship begins and ends at the gate. Revenue is transactional. The connection fades after the weekend.</div></div>
+    <div class="lore-card ember-accent"><span class="card-icon">🐉</span><div class="card-label ember">Transition 2026–2027</div><div class="card-title">People Become Citizens</div><div class="card-body">Website visitors purchase digital passports. Festival visitors purchase physical passports. Those two will blend, thanks to a NFC chip and NFC readers. You can now choose a species and visit your embassy. On the website you collect daily blessings. The festival becomes the physical climax of a year-round story.</div></div>
+    <div class="lore-card silver-accent"><span class="card-icon">🌍</span><div class="card-label silver">Future 2028–2035</div><div class="card-title">The Kingdom Lives 365 Days</div><div class="card-body">AI companions. AR experiences. A digital kingdom-building game. International citizens who have never attended a festival are still part of Planet Eve and the continent Elfia.</div></div>
+  </div>
+  <div class="lore-divider"><span>◆</span></div>
+  <div class="section-banner"><div class="section-eyebrow">Comparable Universes</div><h2 class="section-title">Strategic Benchmarks</h2><p class="section-desc">Uniquely Elfia — but informed by what works at scale</p></div>
+  <div class="card-grid card-grid-4">
+    <div class="lore-card"><span class="card-icon">🏰</span><div class="card-label">Disney</div><div class="card-title">World-Building at Scale</div><div class="card-body">Characters, stories, merchandise, parks, and media that reinforce each other across every touchpoint.</div></div>
+    <div class="lore-card"><span class="card-icon">⚡</span><div class="card-label">Pokémon</div><div class="card-title">Collection + Identity</div><div class="card-body">Trading cards, digital collections, and physical experience all unified by the act of choosing your ally.</div></div>
+    <div class="lore-card"><span class="card-icon">⚔️</span><div class="card-label">World of Warcraft</div><div class="card-title">Guild Identity + Daily Return</div><div class="card-body">Embassy system and daily blessings mirror WoW's faction loyalty and daily quest mechanics.</div></div>
+    <div class="lore-card"><span class="card-icon">🧙</span><div class="card-label">Harry Potter / Renaissance Faires</div><div class="card-title">Physical Fantasy Identity</div><div class="card-body">Sorting Hat = species selection. The festival experience as full costumed immersion with genuine belonging.</div></div>
+  </div>
+  <div class="lore-divider"><span>◆</span></div>
+  <div class="section-banner"><div class="section-eyebrow">The Marketing Funnel Reframed</div><h2 class="section-title">The New Ecosystem</h2><p class="section-desc">Social media is not the destination — elfia.com is</p></div>
+  <div class="flow-chain">
+    <div class="flow-step"><span class="flow-step-num">①</span><span class="flow-step-label">TikTok / Reels</span><span class="flow-step-desc">Emotional spark</span></div>
+    <div class="flow-step"><span class="flow-step-num">②</span><span class="flow-step-label">Website</span><span class="flow-step-desc">Kingdom entry</span></div>
+    <div class="flow-step"><span class="flow-step-num">③</span><span class="flow-step-label">Citizenship</span><span class="flow-step-desc">Species + Embassy</span></div>
+    <div class="flow-step"><span class="flow-step-num">④</span><span class="flow-step-label">Daily Blessings</span><span class="flow-step-desc">Daily return</span></div>
+    <div class="flow-step"><span class="flow-step-num">⑤</span><span class="flow-step-label">Email Herald</span><span class="flow-step-desc">FOMO news &amp; story</span></div>
+    <div class="flow-step"><span class="flow-step-num">⑥</span><span class="flow-step-label">Manga</span><span class="flow-step-desc">Narrative engine</span></div>
+    <div class="flow-step"><span class="flow-step-num">⑦</span><span class="flow-step-label">Festival</span><span class="flow-step-desc">Physical climax</span></div>
+    <div class="flow-step"><span class="flow-step-num">⑧</span><span class="flow-step-label">Dragon Ally</span><span class="flow-step-desc">Lifelong bond</span></div>
+  </div>
+  <div class="highlight-box ember-box" style="margin-top:24px;"><div class="box-title ember">Primary KPI — Not Revenue</div><p>The number of registered Citizens of Elfia is the north star metric. Every system — daily blessings, card mechanics, passport stamps, newsletter, merchant language — is designed to grow this number. Revenue follows citizenship; citizenship does not follow revenue.</p></div>
+  <div class="kpi-grid" style="margin-top:32px;">
+    <div class="kpi-block"><span class="kpi-number">1</span><span class="kpi-label">Primary KPI: Citizens</span></div>
+    <div class="kpi-block"><span class="kpi-number">3</span><span class="kpi-label">Festivals by 2027</span></div>
+    <div class="kpi-block"><span class="kpi-number">5</span><span class="kpi-label">Festivals by 2029</span></div>
+    <div class="kpi-block"><span class="kpi-number">365</span><span class="kpi-label">Days the Kingdom Lives</span></div>
+    <div class="kpi-block"><span class="kpi-number">42</span><span class="kpi-label">Total Trading Cards (EPC Set)</span></div>
 
-<!-- ═══════════════════════ HERO ═══════════════════════ -->
-<section class="hero">
-  <div class="hero-stars"></div>
-  <div class="hero-eyebrow">Kingdom of Elfia · Team Playbook 2026</div>
-  <h1 class="hero-title">
-    Every decision.<br>One direction.
-    <span>From festival gate to digital kingdom.</span>
-  </h1>
-  <p class="hero-sub">For everyone who builds Elfia — on stage, on screen, in code, in story, in stone, in costume, in ink.</p>
-  <div class="hero-rule"></div>
-  <div class="hero-north-star">
-    ◆ &nbsp; Everything we build has one job:<br>
-    turn every human we reach into a registered Citizen of Elfia.
   </div>
 </section>
-
-<!-- ═══════════════════════ TEAM ═══════════════════════ -->
-<div class="team-strip">
-  <div class="team-strip-inner">
-    <div class="team-pill"><span class="icon">✍️</span><span class="name">Stefan</span><span class="role">Scriptwriter & Strategy</span></div>
-    <div class="team-pill"><span class="icon">🎨</span><span class="name">Darja</span><span class="role">Manga Creator & Art Director</span></div>
-    <div class="team-pill"><span class="icon">🎭</span><span class="name">Manuel</span><span class="role">Artist Director, Festival</span></div>
-    <div class="team-pill"><span class="icon">🌿</span><span class="name">Charlotte</span><span class="role">Deco Manager</span></div>
-    <div class="team-pill"><span class="icon">🏪</span><span class="name">Kevin</span><span class="role">Merchant Manager</span></div>
-    <div class="team-pill"><span class="icon">🧪</span><span class="name">Ahmad</span><span class="role">Innkeeper & Elixir Bar</span></div>
-    <div class="team-pill"><span class="icon">💻</span><span class="name">Luso</span><span class="role">Web Developer</span></div>
-    <div class="team-pill"><span class="icon">📢</span><span class="name">Athia</span><span class="role">Marketing</span></div>
-    <div class="team-pill"><span class="icon">📢</span><span class="name">Sashmita</span><span class="role">Marketing</span></div>
-    <div class="team-pill"><span class="icon">📢</span><span class="name">Amalin</span><span class="role">Marketing · Passport Dispatch</span></div>
-    <div class="team-pill"><span class="icon">🎬</span><span class="name">Kyara</span><span class="role">Director of Actors</span></div>
+<!-- CITIZENSHIP TAB -->
+<section class="tab-panel" id="tab-citizenship">
+  <div class="section-banner"><div class="section-eyebrow">Identity System</div><h2 class="section-title">Becoming a Citizen of Elfia</h2><p class="section-desc">Every website visitor chooses who they are. Nobody is just an attendee.</p></div>
+  <div class="highlight-box" style="margin-bottom:32px;"><div class="box-title">Registration Gate</div><p>Daily blessings, the card mechanic, the Digital Wallet, and all earned rewards are <strong>only accessible to registered Citizens</strong>. A visitor must create a free citizen profile and make two foundational choices: their species and their embassy.</p></div>
+  <div class="section-banner"><div class="section-eyebrow">Step One</div><h2 class="section-title">Choose Your Species</h2><p class="section-desc">Your identity in Planet Eve begins here</p></div>
+  <div class="species-grid">
+    <div class="species-card"><span class="species-icon">🧑</span><div class="species-name">Human of Elfia</div><div class="species-desc">Born of the realm. Adaptable, resourceful, and connected to the wormhole networks.</div><div class="tag tag-moss" style="margin-top:8px;display:inline-block;">2026</div></div>
+    <div class="species-card"><span class="species-icon">🧝</span><div class="species-name">Elf</div><div class="species-desc">Ancient ley line bloodlines. Masters of the Air and hidden knowledge.</div><div class="tag tag-moss" style="margin-top:8px;display:inline-block;">2026</div></div>
+    <div class="species-card"><span class="species-icon">🏴‍☠️</span><div class="species-name">Pirate</div><div class="species-desc">Children of Kapteins Baai. Traders, rebels, and seekers of forgotten treasure.</div><div class="tag tag-moss" style="margin-top:8px;display:inline-block;">2026</div></div>
+    <div class="species-card"><span class="species-icon">🧬</span><div class="species-name">Mutant / Hybrid</div><div class="species-desc">Born between worlds. Strange gifts, stranger origins.</div><div class="tag tag-moss" style="margin-top:8px;display:inline-block;">2026</div></div>
+    <div class="species-card"><span class="species-icon">⛏️</span><div class="species-name">Dwarf</div><div class="species-desc">Keepers of Khazadam. Builders, crafters, and guardians of underground secrets.</div><div class="tag tag-silver" style="margin-top:8px;display:inline-block;">2027</div></div>
+    <div class="species-card"><span class="species-icon">🧛</span><div class="species-name">Vampire</div><div class="species-desc">Can be Human, Elf, or Dwarf — turned, not born. Ancient hunger, eternal patience.</div><div class="tag tag-silver" style="margin-top:8px;display:inline-block;">2027</div></div>
+    <div class="species-card"><span class="species-icon">😈</span><div class="species-name">Demon</div><div class="species-desc">Beings of shadow and fire from the deep rifts of Planet Eve. Power without mercy.</div><div class="tag tag-silver" style="margin-top:8px;display:inline-block;">2027</div></div>
+    <div class="species-card"><span class="species-icon">😇</span><div class="species-name">Angel</div><div class="species-desc">Descended from the high reaches above the ley lines. Light, order, and difficult grace.</div><div class="tag tag-silver" style="margin-top:8px;display:inline-block;">2027</div></div>
   </div>
-</div>
-
-<!-- ═══════════════════════ 1. VISION ═══════════════════════ -->
-<section class="page-section">
-  <div class="section-number">01</div>
-  <h2 class="section-heading">We are not running a festival.<br>We are building <em>a civilisation.</em></h2>
-  <p class="section-lead">People no longer visit Elfia. People belong to Elfia. People become Elfia.</p>
-
-  <div class="flow">
-    <div class="flow-step"><span class="flow-num">①</span><span class="flow-label">Discover</span><span class="flow-desc">Social / word of mouth</span></div>
-    <div class="flow-step"><span class="flow-num">②</span><span class="flow-label">Website</span><span class="flow-desc">The kingdom's front door</span></div>
-    <div class="flow-step"><span class="flow-num">③</span><span class="flow-label">Citizen</span><span class="flow-desc">Register free · pick species</span></div>
-    <div class="flow-step"><span class="flow-num">④</span><span class="flow-label">Collect</span><span class="flow-desc">Daily blessings + manga</span></div>
-    <div class="flow-step"><span class="flow-num">⑤</span><span class="flow-label">Herald</span><span class="flow-desc">Tue newsletter · story + FOMO</span></div>
-    <div class="flow-step"><span class="flow-num">⑥</span><span class="flow-step-label" style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px;">Festival</span><span class="flow-desc">Physical climax of the year</span></div>
-    <div class="flow-step"><span class="flow-num">⑦</span><span class="flow-label">Upgrade</span><span class="flow-desc">Paid tier · deeper access</span></div>
+  <div class="section-banner"><div class="section-eyebrow">Step Two</div><h2 class="section-title">Join Your Embassy</h2><p class="section-desc">Embassies are the first layer of kingdom community</p></div>
+  <div class="card-grid card-grid-3" style="margin-bottom:32px;">
+    <div class="lore-card"><div class="card-label">Active at Arcen 2026</div><div class="card-title">The Four Embassies</div><div class="card-body"><ul><li>🐾 Furry Embassy</li><li>🚀 Space Embassy</li><li>🏴‍☠️ Pirate Embassy</li><li>🧝 Elven Embassy</li></ul></div></div>
+    <div class="lore-card silver-accent"><div class="card-label silver">Future Embassies</div><div class="card-title">Expanding the Kingdom</div><div class="card-body"><ul><li class="silver">Dwarven Embassy</li><li class="silver">Mutant Embassy</li><li class="silver">Vampire Embassy</li><li class="silver">Demon Embassy</li><li class="silver">Angel Embassy</li><li class="silver">+ Community-proposed embassies</li></ul></div></div>
+    <div class="lore-card moss-accent"><div class="card-label moss">Embassy Credentials (2026)</div><div class="card-title">Benji &amp; Anique Tour</div><div class="card-body">The Vassal King &amp; Queen, accompanied by Salem Dee and an elven escort, ceremonially present official credentials to each embassy and receive a unique customs stamp to be used for the Elfia passport.</div></div>
   </div>
-
-  <div class="highlight gold">
-    <div class="highlight-title">The Primary KPI</div>
-    <p>Ticket revenue is a consequence. <strong>Citizens registered is the metric.</strong> Every role in this team — from deco builder to newsletter writer to merchant booker — has one shared job: bring people deeper into the world so they choose to register and stay registered.</p>
+  <div class="lore-divider"><span>◆</span></div>
+  <div class="section-banner"><div class="section-eyebrow">Step Three — Coming Later</div><h2 class="section-title">Choose Your Dragon Ally</h2><p class="section-desc">No citizen can become a dragon. But every citizen can be chosen by one.</p></div>
+  <div class="highlight-box ember-box" style="margin-bottom:24px;"><div class="box-title ember">Why You can't choose to be a Dragon</div><p>Dragons in Planet Eve are rare, ancient, and powerful beings. Citizens do not become dragons, they are recognised by them, and chosen to form an alliance. Dragon Ally selection unlocks as the interactive manga layer develops (2026–2027).</p></div>
+  <div class="card-grid card-grid-4">
+    <div class="lore-card ember-accent"><span class="card-icon">🔥</span><div class="card-label ember">Dragon Ally</div><div class="card-title">Drach-oc</div><div class="card-body">Fire. Vengeance. The most dangerous ally — and the most loyal.</div></div>
+    <div class="lore-card silver-accent"><span class="card-icon">💨</span><div class="card-label silver">Dragon Ally</div><div class="card-title">Riven</div><div class="card-body">Wind. Speed. The edge between loyalty and chaos.</div></div>
+    <div class="lore-card moss-accent"><span class="card-icon">🌊</span><div class="card-label moss">Dragon Ally</div><div class="card-title">Mizuki</div><div class="card-body">Water. Calm. Ancient patience. Chooses allies carefully.</div></div>
+    <div class="lore-card"><span class="card-icon">🌍</span><div class="card-label">Dragon Ally</div><div class="card-title">Seol-Hwa</div><div class="card-body">Earth. Strategy. Thinks like a queen, waits like poison in silk.</div></div>
+  </div>
+  <div class="lore-divider"><span>◆</span></div>
+  <div class="section-banner"><div class="section-eyebrow">The Physical Artefact</div><h2 class="section-title">The Authorised Wormhole Travel Passport</h2><p class="section-desc">"You'll Never Dream Alone" — Kingdom of Elfia</p></div>
+  <div class="card-grid card-grid-2">
+    <div class="lore-card"><div class="card-label">Physical Passport</div><div class="card-title">Stamp Economy at the Festival</div><div class="card-body"><p style="margin-bottom:12px;">Citizens collect stamps at:</p><ul><li>Each Embassy</li><li>Elfia Temptation (exclusive 18+ stamp)</li><li>Entrance</li><li>Some Vendors</li></ul></div></div>
+    <div class="lore-card silver-accent"><div class="card-label silver">Daily Blessings Reward</div><div class="card-title">Earn Your Passport for Free</div><div class="card-body"><p style="margin-bottom:12px;">Citizens who collect the Elfia Passport blessing on at least <strong>5 of its 9 appearance days</strong> (4 Aug – 17 Sep) earn the physical passport for free — shipped for €3.95 or collected free at the next festival.</p><p>The passport holder (red or blue) follows the same earn mechanic as a separate blessing.</p></div></div>
   </div>
 </section>
+<!-- DAILY BLESSINGS TAB — FULLY UPDATED -->
 
-<!-- ═══════════════════════ 2. CITIZENSHIP + TIERS ═══════════════════════ -->
-<section class="page-section">
-  <div class="section-number">02</div>
-  <h2 class="section-heading">Citizenship.<br><em>Free to join. Rewarding to stay.</em></h2>
-  <p class="section-lead">Three tiers. The free tier does the recruitment. The paid tiers create lifelong kingdom members.</p>
+<!-- ============================================================ CITIZEN TIERS TAB -->
+<section id="tab-tiers" class="tab-panel">
+  <div class="section-banner">
+    <div class="section-eyebrow">Citizenship Tiers — Revenue Model</div>
+    <h2 class="section-title">Free to Join. Rewarding to Stay.</h2>
+    <p class="section-desc">Three tiers · The free tier recruits · The paid tiers create lifelong kingdom members</p>
+  </div>
+
+  <div class="highlight-box" style="margin-bottom:32px;">
+    <div class="box-title">The Logic</div>
+    <p>Citizenship is free forever — that removes all friction to registration. The paid tiers convert the most devoted citizens into recurring revenue. The Early Elf Ticket access in the Premium tier is the killer feature: one festival discount pays for three years of membership. Subscription value is immediately tangible.</p>
+  </div>
 
   <div class="tiers">
     <div class="tier free">
@@ -787,11 +318,12 @@ tbody td:first-child { color: var(--parchment); font-weight: 500; }
       <ul>
         <li>Read all interactive manga chapters</li>
         <li>Collect daily digital blessings</li>
-        <li>Earn digital passport + stamps</li>
+        <li>Earn digital passport + digital stamps</li>
         <li>Earn physical passport (5 of 9 blessing days)</li>
         <li>Choose species + join embassy</li>
         <li>Digital wallet for cards &amp; artefacts</li>
         <li>Access to Elfia Herald newsletter</li>
+        <li>Collect trading cards (EPC set)</li>
       </ul>
     </div>
     <div class="tier standard">
@@ -801,10 +333,11 @@ tbody td:first-child { color: var(--parchment); font-weight: 500; }
       <div class="tier-name">Knight of Elfia</div>
       <ul>
         <li>Everything in Free tier</li>
-        <li>Free access to AI anime series — <em>Little Drach-oc</em> (Kling AI)</li>
+        <li>Free access to AI anime series — <em>Little Drach-oc</em></li>
         <li>Exclusive behind-the-scenes manga content</li>
         <li>Early access to new chapters before public release</li>
         <li>Priority notification on festival programme</li>
+        <li>Knight badge on citizen profile</li>
       </ul>
     </div>
     <div class="tier premium">
@@ -814,448 +347,1362 @@ tbody td:first-child { color: var(--parchment); font-weight: 500; }
       <div class="tier-name">Elf-Noble of Elfia</div>
       <ul>
         <li>Everything in Standard tier</li>
-        <li><strong>Early Elf Tickets</strong> — access before public sale opens, at the lowest price of the year</li>
-        <li>10% off merch online + at festival</li>
-        <li>50% discount on physical artefacts earned through blessings</li>
-        <li>VIP access to Elfia Elixir Bar</li>
-        <li>Name in the Kingdom scrolls (website + passport)</li>
+        <li><strong>Early Elf Tickets</strong> — access before public sale, lowest price of the year</li>
+        <li>€10 discount per festival ticket (up to 3 festivals per year)</li>
+        <li>50% discount on blessing artefacts ordered online</li>
+        <li>VIP access to Elfia Elixir Bar at the festival</li>
+        <li>Name inscribed in the Kingdom Scrolls (website + passport)</li>
+        <li>Elf-Noble badge + exclusive species colour variant</li>
       </ul>
     </div>
   </div>
 
-  <div class="highlight ember">
-    <div class="highlight-title">Why Early Elf Tickets Work</div>
-    <p>Premium citizens get exclusive access to Early Elf Tickets days before the general public sale opens. These are the cheapest tickets of the year. The perceived value is enormous — and it directly ties the €25/year subscription to real, measurable savings on every festival visit. One ticket discount pays for three years of membership.</p>
-  </div>
-</section>
-
-<!-- ═══════════════════════ 3. DAILY BLESSINGS + MERCH ═══════════════════════ -->
-<section class="page-section">
-  <div class="section-number">03</div>
-  <h2 class="section-heading">Daily Blessings.<br><em>The engine of daily return.</em></h2>
-  <p class="section-lead">Every collectible is an artefact from the story. Every artefact drives citizens back to elfia.com — every single day.</p>
-
-  <div class="cards cards-3">
-    <div class="card">
-      <span class="card-icon">📘</span>
-      <div class="card-tag">Blessing Item</div>
-      <h3>Elfia Passport</h3>
-      <p>The cornerstone physical artefact. Appear on 5 of its 9 blessing days and earn it free. Ship for €3.95 or collect free at the festival Tourist Info Booth.</p>
-    </div>
-    <div class="card moss">
-      <span class="card-icon">🔴</span>
-      <div class="card-tag moss">Blessing Item</div>
-      <h3>Passport Holder — Red</h3>
-      <p>Same mechanic. Its own 9-day appearance rhythm. Designed to pair with the passport — citizens who earn both carry a complete set.</p>
-    </div>
-    <div class="card silver">
-      <span class="card-icon">📌</span>
-      <div class="card-tag silver">Blessing Items × 3</div>
-      <h3>Lore Pins — Planet Eve</h3>
-      <p>Three pins with identities rooted in Drach-oc lore. Names and designs from Darja — tied directly to manga characters and places. <em>Names TBD before 4 August.</em></p>
-    </div>
+  <div class="highlight-box ember-box">
+    <div class="box-title ember">Why Early Elf Tickets Are the Hook</div>
+    <p>Premium citizens get exclusive access to Early Elf Tickets before the general public sale opens. These are the cheapest tickets of the year. The perceived value is enormous — and measurable. A single Arcen weekend ticket saving of €10–15 already covers the €25 annual fee. Citizens who attend two or three festivals in a year save dramatically more. The subscription sells itself.</p>
   </div>
 
-  <div class="highlight moss">
-    <div class="highlight-title">The Story Connection — Darja + Stefan</div>
-    <p>Every physical artefact in the blessing system must trace back to the manga. A pin is not merchandise — it is a fragment of Planet Eve that a citizen can hold. Darja designs; Stefan provides the lore context. The citizen collects the story, one blessing at a time.</p>
+  <div class="lore-divider"><span>◆</span></div>
+
+  <div class="section-banner">
+    <div class="section-eyebrow">Rollout Timeline</div>
+    <h2 class="section-title">When Each Tier Launches</h2>
+    <p class="section-desc">Free tier drives registrations first — paid tiers follow when the citizen base justifies the infrastructure</p>
   </div>
-
-  <div class="divider"><span>◆</span></div>
-
-  <h3 style="font-family:'Cinzel',serif;font-size:18px;color:var(--parchment);margin-bottom:8px;">Merch as Story Extension</h3>
-  <p style="font-family:'Crimson Pro',serif;font-size:16px;color:var(--silver-light);font-weight:300;margin-bottom:24px;max-width:700px;">Merchandise that sells is merchandise that belongs to the world. Every item for sale — online or at the festival — must have a lore reason to exist.</p>
-
-  <div class="cards cards-4">
-    <div class="card">
-      <div class="card-tag">Kevin · Merchants</div>
-      <h3>Merchant Selection</h3>
-      <p>Only merchants whose products fit the world of Planet Eve. Kevin's brief: every stall should feel like it could exist in the kingdom. If it could be sold at an Ikea, it doesn't belong here.</p>
+  <div class="card-grid card-grid-3">
+    <div class="lore-card moss-accent">
+      <div class="card-label moss">2026 — Now</div>
+      <div class="card-title">Free Tier Only</div>
+      <div class="card-body">All citizens register free. Build the base. Every system (blessings, passport, cards, Herald) is designed to maximise free registrations. The paid tiers are not announced yet — the product must be earned first.</div>
     </div>
-    <div class="card ember">
-      <div class="card-tag ember">Ahmad · Innkeeper</div>
-      <h3>Innkeepers &amp; Elixir Bars</h3>
-      <p>Food and drink are kingdom hospitality — not catering. The Elfia Elixir Bar brews and sells our own health elixirs. Ahmad owns the language and the experience here.</p>
+    <div class="lore-card">
+      <div class="card-label">2026–2027</div>
+      <div class="card-title">Knight Tier Launches</div>
+      <div class="card-body">€10/yr tier launches alongside the AI anime series (Little Drach-oc). The anime is the product citizens are paying for. Early access to manga chapters is the secondary benefit. Target: launch with first anime episode.</div>
     </div>
-    <div class="card moss">
-      <div class="card-tag moss">Manuel · Kyara · Deco</div>
-      <h3>Acts &amp; Workshops</h3>
-      <p>Kyara directs: every act, workshop, and performance should deepen the Elfia story. More custom-made acts tied to Planet Eve lore. Less generic medieval entertainment.</p>
-    </div>
-    <div class="card silver">
-      <div class="card-tag silver">Charlotte · Deco</div>
-      <h3>World-Building in Space</h3>
-      <p>Deco is set design for the kingdom. Each area of the festival is a location in Planet Eve. Charlotte works from the story bible — not from generic fantasy references.</p>
+    <div class="lore-card silver-accent">
+      <div class="card-label silver">2027</div>
+      <div class="card-title">Elf-Noble Tier + Early Elf Tickets</div>
+      <div class="card-body">€25/yr tier launches ahead of Elfia Vorden 2027 — the first festival where Early Elf Tickets exist. Citizens who subscribe before the ticket sale opens get the discount. Creates immediate subscription pressure.</div>
     </div>
   </div>
 </section>
+<section class="tab-panel" id="tab-blessings">
+  <div class="section-banner">
+    <div class="section-eyebrow">Daily Engagement Engine · Phase 1 · 4 August – 17 September 2025</div>
+    <h2 class="section-title">The Daily Blessings System</h2>
+    <p class="section-desc">One blessing per day. Five collectibles. 45 days. Earn them — or miss them.</p>
+  </div>
+  <div class="highlight-box" style="margin-bottom:32px;">
+    <div class="box-title">The Core Mechanic</div>
+    <p>Each day from <strong>4 August through 17 September 2025</strong> (45 days total), one Blessing appears on elfia.com. A Blessing is a physical collectible from the world of Planet Eve — earned for free by showing up on the right days. Each of the five collectibles has its own <strong>sacred rhythm</strong>: a set of 9 specific dates scattered across the window on which it becomes claimable. Only one item appears per day — no two blessings are ever active simultaneously. Collect any item on at least <strong>5 of its 9 appearance days</strong> to earn the physical reward. The window closes 17 September. A new blessing cycle opens 23 September.</p>
+  </div>
 
-<!-- ═══════════════════════ 4. WEBSITE + SOCIAL ═══════════════════════ -->
-<section class="page-section">
-  <div class="section-number">04</div>
-  <h2 class="section-heading">The website is<br><em>the kingdom itself.</em></h2>
-  <p class="section-lead">Social media is a signpost. elfia.com is the destination. Everything points inward — always.</p>
-
-  <div class="cards cards-2">
-    <div class="card">
-      <span class="card-icon">🌍</span>
-      <div class="card-tag">Luso · Live Now</div>
-      <h3>Europe / Earth Map with Wormholes</h3>
-      <p>The interactive map of Planet Eve's wormhole connection points to Earth already exists. This is one of the most powerful citizenship-acquisition tools on the site — it makes the world feel real before a visitor even registers. Needs to be prominent on the homepage and linked in the Herald.</p>
+  <div class="card-grid card-grid-2" style="margin-bottom:32px;">
+    <div class="lore-card">
+      <div class="card-label">The Rule</div>
+      <div class="card-title">One Blessing Per Day — Maximum</div>
+      <div class="card-body">Only one collectible appears per day. Citizens cannot catch up by visiting multiple times. Each claim is tied to the registered account and requires login. This creates genuine daily habit rather than binge collection.</div>
     </div>
-    <div class="card violet">
-      <span class="card-icon">🤖</span>
-      <div class="card-tag violet">Luso · In Development</div>
-      <h3>AI Chatbot — Citizen Service</h3>
-      <p>The chatbot already exists. It needs to be trained on all kingdom knowledge: lore, festival logistics, citizenship questions, blessings rules, passport info. Goal: answer every FAQ without involving the marketing team. Frees Athia, Sashmita, and Amalin for creation — not repetition.</p>
+    <div class="lore-card ember-accent">
+      <div class="card-label ember">The Requirement</div>
+      <div class="card-title">Registered Citizens Only</div>
+      <div class="card-body">Daily blessings are exclusively available to registered Citizens of Elfia. A visitor must choose their species and embassy to unlock the mechanic. Citizenship registration is the gateway to everything that follows.</div>
     </div>
   </div>
 
-  <div class="divider"><span>◆</span></div>
+  <div class="lore-divider"><span>◆</span></div>
 
-  <h3 style="font-family:'Cinzel',serif;font-size:18px;color:var(--parchment);margin-bottom:8px;">Social Media — Less Work. Same Reach.</h3>
-  <p style="font-family:'Crimson Pro',serif;font-size:16px;color:var(--silver-light);font-weight:300;margin-bottom:24px;max-width:700px;">The rule: social media repurposes content that already exists. It never creates new content from scratch. AI accelerates this dramatically.</p>
+  <div class="section-banner">
+    <div class="section-eyebrow">The Five Collectibles · Each appears 9 days · Earn by collecting 5 of 9</div>
+    <h2 class="section-title">Phase 1 Blessings</h2>
+    <p class="section-desc">All four items are staggered — never two on the same day · 4 items × 9 days = 36 days (+ 9 days remaining)</p>
+  </div>
 
-  <div class="cards cards-3">
-    <div class="card violet">
-      <div class="card-tag violet">AI Tool</div>
-      <h3>Content Repurposing</h3>
-      <p>Every manga chapter → 3 social posts. Every Herald → 1 Instagram story. Every festival moment → short Reels clip. Tools: <strong>CapCut AI</strong> (Reels), <strong>Canva AI</strong> (statics), <strong>Claude</strong> (captions). One piece of content becomes five without extra creative work.</p>
+  <div class="blessing-item-card passport-card">
+    <div class="blessing-item-icon">📘</div>
+    <div>
+      <div class="blessing-item-name" style="color:var(--dragon-gold-light);">Elfia Passport — Authorised Wormhole Travel Document</div>
+      <div class="blessing-item-desc">The primary collectible of Phase 1. The official Kingdom of Elfia travel document — stamped at festivals, embassies, and sacred sites across Planet Eve. Appears on 9 specific days, staggered from all other blessings.</div>
     </div>
-    <div class="card violet">
-      <div class="card-tag violet">AI Tool</div>
-      <h3>Scheduling &amp; Posting</h3>
-      <p>Tools: <strong>Buffer</strong> or <strong>Later</strong> for scheduling. Batch one week of posts in one session. The marketing team does not need to be on social daily — they need to be in the kingdom weekly, setting the rhythm.</p>
+    <div class="blessing-item-rule">
+      <span class="blessing-collect" style="color:var(--dragon-gold-light);">5 of 9</span>
+      <span class="blessing-collect-label">days to earn</span>
     </div>
-    <div class="card ember">
-      <div class="card-tag ember">Rule</div>
-      <h3>Every Post Has One Job</h3>
-      <p>Every social post ends with one action: visit elfia.com. Not "follow us." Not "like this." The link in bio goes to the citizenship registration page — not the festival homepage. Social is a funnel; the website is the kingdom.</p>
+  </div>
+
+  <div class="blessing-item-card holder-red">
+    <div class="blessing-item-icon">🔴</div>
+    <div>
+      <div class="blessing-item-name" style="color:var(--ember-light);">Passport Holder — Red Edition</div>
+      <div class="blessing-item-desc">A designed red passport holder — same retail price as the passport, earned free through the same collection mechanic. Appears on its own 9 days, staggered from all other items.</div>
+    </div>
+    <div class="blessing-item-rule">
+      <span class="blessing-collect" style="color:var(--ember-light);">5 of 9</span>
+      <span class="blessing-collect-label">days to earn</span>
+    </div>
+  </div>
+
+
+  <div class="blessing-item-card pin-card">
+    <div class="blessing-item-icon">📌</div>
+    <div>
+      <div class="blessing-item-name" style="color:var(--moss-light);">Pin №1 — [Name & Design TBD]</div>
+      <div class="blessing-item-desc">The first of three collectible pins from the world of Planet Eve. Each pin has a distinct design and identity rooted in Drach-oc lore. Name and visual identity must be confirmed before 4 August launch.</div>
+    </div>
+    <div class="blessing-item-rule">
+      <span class="blessing-collect" style="color:var(--moss-light);">5 of 9</span>
+      <span class="blessing-collect-label">days to earn</span>
+    </div>
+  </div>
+
+  <div class="blessing-item-card pin-card">
+    <div class="blessing-item-icon">📌</div>
+    <div>
+      <div class="blessing-item-name" style="color:var(--moss-light);">Pin №2 — [Name & Design TBD]</div>
+      <div class="blessing-item-desc">The second collectible pin. Appears on its own 9 staggered days. Collecting all three pins requires visiting on 15 of the 45 days dedicated to pins alone.</div>
+    </div>
+    <div class="blessing-item-rule">
+      <span class="blessing-collect" style="color:var(--moss-light);">5 of 9</span>
+      <span class="blessing-collect-label">days to earn</span>
+    </div>
+  </div>
+
+  <div class="blessing-item-card pin-card">
+    <div class="blessing-item-icon">📌</div>
+    <div>
+      <div class="blessing-item-name" style="color:var(--moss-light);">Pin №3 — [Name & Design TBD]</div>
+      <div class="blessing-item-desc">The third collectible pin. A citizen who collects all five Phase 1 blessings must visit on at least 25 of the 45 days — a meaningful commitment that rewards the most devoted citizens.</div>
+    </div>
+    <div class="blessing-item-rule">
+      <span class="blessing-collect" style="color:var(--moss-light);">5 of 9</span>
+      <span class="blessing-collect-label">days to earn</span>
+    </div>
+  </div>
+
+  <div class="lore-divider"><span>◆</span></div>
+
+  <!-- CALENDAR STRIP -->
+  <div class="section-banner">
+    <div class="section-eyebrow">Appearance Calendar — Illustrative Stagger Example</div>
+    <h2 class="section-title">How the 45 Days Are Divided</h2>
+    <p class="section-desc">Each coloured dot = one day that item appears · Exact schedule set by team before 4 August</p>
+  </div>
+  <div class="calendar-strip">
+    <div class="calendar-strip-title">45-Day Window · 4 Aug → 17 Sep · One item per day · All staggered</div>
+    <div class="calendar-row">
+      <div class="calendar-row-label">📘 Passport</div>
+      <div class="cal-dots">
+        <div class="cal-dot ag">1</div><div class="cal-dot">2</div><div class="cal-dot">3</div><div class="cal-dot">4</div><div class="cal-dot ag">5</div>
+        <div class="cal-dot">6</div><div class="cal-dot">7</div><div class="cal-dot">8</div><div class="cal-dot ag">9</div><div class="cal-dot">10</div>
+        <div class="cal-dot">11</div><div class="cal-dot">12</div><div class="cal-dot ag">13</div><div class="cal-dot">14</div><div class="cal-dot">15</div>
+        <div class="cal-dot">16</div><div class="cal-dot">17</div><div class="cal-dot ag">18</div><div class="cal-dot">19</div><div class="cal-dot">20</div>
+        <div class="cal-dot">21</div><div class="cal-dot ag">22</div><div class="cal-dot">23</div><div class="cal-dot">24</div><div class="cal-dot">25</div>
+        <div class="cal-dot ag">26</div><div class="cal-dot">27</div><div class="cal-dot">28</div><div class="cal-dot">29</div><div class="cal-dot ag">30</div>
+        <div class="cal-dot">31</div><div class="cal-dot">32</div><div class="cal-dot ag">33</div><div class="cal-dot">34</div><div class="cal-dot">35</div>
+        <div class="cal-dot">36</div><div class="cal-dot">37</div><div class="cal-dot">38</div><div class="cal-dot">39</div><div class="cal-dot">40</div>
+        <div class="cal-dot">41</div><div class="cal-dot">42</div><div class="cal-dot">43</div><div class="cal-dot">44</div><div class="cal-dot">45</div>
+      </div>
+    </div>
+    <div class="calendar-row">
+      <div class="calendar-row-label">🔴 Holder Red</div>
+      <div class="cal-dots">
+        <div class="cal-dot">1</div><div class="cal-dot ar">2</div><div class="cal-dot">3</div><div class="cal-dot">4</div><div class="cal-dot">5</div>
+        <div class="cal-dot ar">6</div><div class="cal-dot">7</div><div class="cal-dot">8</div><div class="cal-dot">9</div><div class="cal-dot ar">10</div>
+        <div class="cal-dot">11</div><div class="cal-dot">12</div><div class="cal-dot">13</div><div class="cal-dot ar">14</div><div class="cal-dot">15</div>
+        <div class="cal-dot">16</div><div class="cal-dot">17</div><div class="cal-dot">18</div><div class="cal-dot ar">19</div><div class="cal-dot">20</div>
+        <div class="cal-dot">21</div><div class="cal-dot">22</div><div class="cal-dot">23</div><div class="cal-dot ar">24</div><div class="cal-dot">25</div>
+        <div class="cal-dot">26</div><div class="cal-dot">27</div><div class="cal-dot ar">28</div><div class="cal-dot">29</div><div class="cal-dot">30</div>
+        <div class="cal-dot">31</div><div class="cal-dot">32</div><div class="cal-dot">33</div><div class="cal-dot ar">34</div><div class="cal-dot ar">35</div>
+        <div class="cal-dot">36</div><div class="cal-dot">37</div><div class="cal-dot">38</div><div class="cal-dot">39</div><div class="cal-dot">40</div>
+        <div class="cal-dot">41</div><div class="cal-dot">42</div><div class="cal-dot">43</div><div class="cal-dot">44</div><div class="cal-dot">45</div>
+      </div>
+    </div>
+    <div class="calendar-row">
+      <div class="calendar-row-label">📌 Pin №1</div>
+      <div class="cal-dots">
+        <div class="cal-dot">1</div><div class="cal-dot">2</div><div class="cal-dot ab">3</div><div class="cal-dot">4</div><div class="cal-dot">5</div>
+        <div class="cal-dot">6</div><div class="cal-dot ab">7</div><div class="cal-dot">8</div><div class="cal-dot">9</div><div class="cal-dot">10</div>
+        <div class="cal-dot ab">11</div><div class="cal-dot">12</div><div class="cal-dot">13</div><div class="cal-dot">14</div><div class="cal-dot ab">15</div>
+        <div class="cal-dot">16</div><div class="cal-dot">17</div><div class="cal-dot">18</div><div class="cal-dot">19</div><div class="cal-dot ab">20</div>
+        <div class="cal-dot">21</div><div class="cal-dot">22</div><div class="cal-dot">23</div><div class="cal-dot">24</div><div class="cal-dot">25</div>
+        <div class="cal-dot">26</div><div class="cal-dot ab">27</div><div class="cal-dot">28</div><div class="cal-dot">29</div><div class="cal-dot">30</div>
+        <div class="cal-dot">31</div><div class="cal-dot ab">32</div><div class="cal-dot">33</div><div class="cal-dot">34</div><div class="cal-dot">35</div>
+        <div class="cal-dot ab">36</div><div class="cal-dot">37</div><div class="cal-dot">38</div><div class="cal-dot ab">39</div><div class="cal-dot ab">40</div>
+        <div class="cal-dot">41</div><div class="cal-dot">42</div><div class="cal-dot">43</div><div class="cal-dot">44</div><div class="cal-dot">45</div>
+      </div>
+    </div>
+    <div class="calendar-row">
+      <div class="calendar-row-label">📌 Pin №2</div>
+      <div class="cal-dots">
+        <div class="cal-dot">1</div><div class="cal-dot">2</div><div class="cal-dot">3</div><div class="cal-dot am">4</div><div class="cal-dot">5</div>
+        <div class="cal-dot">6</div><div class="cal-dot">7</div><div class="cal-dot am">8</div><div class="cal-dot">9</div><div class="cal-dot">10</div>
+        <div class="cal-dot">11</div><div class="cal-dot am">12</div><div class="cal-dot">13</div><div class="cal-dot">14</div><div class="cal-dot">15</div>
+        <div class="cal-dot am">16</div><div class="cal-dot">17</div><div class="cal-dot">18</div><div class="cal-dot">19</div><div class="cal-dot">20</div>
+        <div class="cal-dot am">21</div><div class="cal-dot">22</div><div class="cal-dot">23</div><div class="cal-dot">24</div><div class="cal-dot am">25</div>
+        <div class="cal-dot">26</div><div class="cal-dot">27</div><div class="cal-dot">28</div><div class="cal-dot">29</div><div class="cal-dot">30</div>
+        <div class="cal-dot am">31</div><div class="cal-dot">32</div><div class="cal-dot">33</div><div class="cal-dot">34</div><div class="cal-dot">35</div>
+        <div class="cal-dot">36</div><div class="cal-dot am">37</div><div class="cal-dot">38</div><div class="cal-dot">39</div><div class="cal-dot">40</div>
+        <div class="cal-dot am">41</div><div class="cal-dot">42</div><div class="cal-dot">43</div><div class="cal-dot">44</div><div class="cal-dot">45</div>
+      </div>
+    </div>
+    <div class="calendar-row">
+      <div class="calendar-row-label">📌 Pin №3</div>
+      <div class="cal-dots">
+        <div class="cal-dot">1</div><div class="cal-dot">2</div><div class="cal-dot">3</div><div class="cal-dot">4</div><div class="cal-dot">5</div>
+        <div class="cal-dot">6</div><div class="cal-dot">7</div><div class="cal-dot">8</div><div class="cal-dot ap">9</div><div class="cal-dot">10</div>
+        <div class="cal-dot">11</div><div class="cal-dot">12</div><div class="cal-dot">13</div><div class="cal-dot">14</div><div class="cal-dot">15</div>
+        <div class="cal-dot">16</div><div class="cal-dot ap">17</div><div class="cal-dot">18</div><div class="cal-dot">19</div><div class="cal-dot">20</div>
+        <div class="cal-dot">21</div><div class="cal-dot">22</div><div class="cal-dot ap">23</div><div class="cal-dot">24</div><div class="cal-dot">25</div>
+        <div class="cal-dot">26</div><div class="cal-dot">27</div><div class="cal-dot">28</div><div class="cal-dot ap">29</div><div class="cal-dot">30</div>
+        <div class="cal-dot">31</div><div class="cal-dot">32</div><div class="cal-dot">33</div><div class="cal-dot">34</div><div class="cal-dot">35</div>
+        <div class="cal-dot ap">36</div><div class="cal-dot">37</div><div class="cal-dot">38</div><div class="cal-dot">39</div><div class="cal-dot">40</div>
+        <div class="cal-dot">41</div><div class="cal-dot ap">42</div><div class="cal-dot">43</div><div class="cal-dot ap">44</div><div class="cal-dot ap">45</div>
+      </div>
+    </div>
+    <p style="font-family:'Inter',sans-serif;font-size:11px;color:var(--silver-ley);margin-top:14px;line-height:1.6;">◆ Coloured dot = item appears that day &nbsp;|&nbsp; Blank = a different item appears that day &nbsp;|&nbsp; Numbers = day of the 45-day window &nbsp;|&nbsp; This is illustrative — exact schedule set by team before launch</p>
+  </div>
+
+  <div class="lore-divider"><span>◆</span></div>
+
+  <!-- REDEMPTION -->
+  <div class="section-banner">
+    <div class="section-eyebrow">Redemption — Chosen at the Moment of Earning</div>
+    <h2 class="section-title">How to Receive Your Reward</h2>
+    <p class="section-desc">Each item is its own separate decision · No bundling · Choice made when you hit 5 of 9</p>
+  </div>
+  <div class="delivery-grid">
+    <div class="delivery-option">
+      <span class="d-icon">📦</span>
+      <div class="d-title">Ship to Me</div>
+      <div class="d-detail">Delivered to your door. A4 size max, 100g max weight, standard postal box. Via EasyParcel (transitioning to Netherlands fulfilment centre). Max 500 shipments per month.</div>
+      <span class="d-price" style="color:var(--dragon-gold);">€3.95</span>
+    </div>
+    <div class="delivery-option festival">
+      <span class="d-icon">🏰</span>
+      <div class="d-title">Festival Pickup — Free</div>
+      <div class="d-detail">Collect at the Tourist Info Booth at no cost. Valid only at the <strong>next festival after the moment you earned it</strong>. Show your citizen QR code at the booth.</div>
+      <span class="d-price" style="color:var(--moss-light);">Free</span>
+    </div>
+  </div>
+  <div class="highlight-box silver-box">
+    <div class="box-title">Each Item is Its Own Decision</div>
+    <p>If you earn the passport and the red holder, that is two separate redemption choices — and two separate €3.95 fees if you choose delivery for both. The choice is made at the moment of earning, after hitting 5 of 9 collection days for that specific item.</p>
+  </div>
+
+  <div class="lore-divider"><span>◆</span></div>
+
+  <!-- SUMMARY TABLE -->
+  <div class="section-banner"><div class="section-eyebrow">Quick Reference</div><h2 class="section-title">Phase 1 Summary Table</h2><p class="section-desc">All four items at a glance</p></div>
+  <div class="scroll-table">
+    <table>
+      <thead><tr><th>Collectible</th><th>Appears</th><th>Must Collect</th><th>Ship</th><th>Festival Pickup</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>📘 Elfia Passport</td><td class="cell-gold">9 days</td><td class="cell-gold">5 of 9</td><td>€3.95</td><td class="cell-moss">Free (next festival)</td><td class="cell-moss">Confirmed</td></tr>
+        <tr><td>🔴 Passport Holder — Red</td><td class="cell-gold">9 days</td><td class="cell-gold">5 of 9</td><td>€3.95</td><td class="cell-moss">Free (next festival)</td><td class="cell-moss">Confirmed</td></tr>
+        <tr><td>📌 Pin №1</td><td class="cell-gold">9 days</td><td class="cell-gold">5 of 9</td><td>€3.95</td><td class="cell-moss">Free (next festival)</td><td class="cell-ember">Name &amp; design TBD</td></tr>
+        <tr><td>📌 Pin №2</td><td class="cell-gold">9 days</td><td class="cell-gold">5 of 9</td><td>€3.95</td><td class="cell-moss">Free (next festival)</td><td class="cell-ember">Name &amp; design TBD</td></tr>
+        <tr><td>📌 Pin №3</td><td class="cell-gold">9 days</td><td class="cell-gold">5 of 9</td><td>€3.95</td><td class="cell-moss">Free (next festival)</td><td class="cell-ember">Name &amp; design TBD</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="lore-divider"><span>◆</span></div>
+
+  <!-- OPEN ACTIONS -->
+  <div class="section-banner"><div class="section-eyebrow">Open Actions — Before 4 August</div><h2 class="section-title">What Still Needs Deciding</h2><p class="section-desc">These must be resolved before the system goes live</p></div>
+  <div class="card-grid card-grid-2">
+    <div class="lore-card ember-accent">
+      <div class="card-label ember">Action 1 — Urgent</div>
+      <div class="card-title">Pin Names &amp; Visual Identities</div>
+      <div class="card-body">All three pins need names and designs rooted in Drach-oc / Planet Eve lore before launch. Citizens need something to attach meaning to — "Pin №1" is a placeholder. Even simple lore-based names (a character, a place, a symbol) dramatically increase motivation to collect all three.</div>
+    </div>
+    <div class="lore-card ember-accent">
+      <div class="card-label ember">Action 2 — Urgent</div>
+      <div class="card-title">45-Day Appearance Calendar</div>
+      <div class="card-body">The exact schedule of which item appears on which day must be set and locked before 4 August. The calendar above is illustrative only. Assign the days across 4 items (9 days each) and build the website logic to match before launch.</div>
+    </div>
+    <div class="lore-card silver-accent">
+      <div class="card-label silver">Action 3 — Confirmed for Comms</div>
+      <div class="card-title">Both Holder Colours Are Intentional</div>
+      <div class="card-body">Collecting all four items requires 20 dedicated visit days out of 45. Make sure communications are clear about how many appearance days remain for each item as the window progresses.</div>
+    </div>
+    <div class="lore-card">
+      <div class="card-label">Action 4 — Coming Next</div>
+      <div class="card-title">ECG Card Sleeve — Phase 2</div>
+      <div class="card-body">The Elfia Collectible Card Game sleeve (6 cards: 4 common, 1 uncommon, 1 holographic) will not launch in Phase 1 — the 45-day window is too short. It launches in the new blessing cycle opening <strong>23 September</strong>.</div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════ 5. PASSPORT ═══════════════════════ -->
-<section class="page-section">
-  <div class="section-number">05</div>
-  <h2 class="section-heading">The Passport.<br><em>The missing link between worlds.</em></h2>
-  <p class="section-lead">The Elfia Passport is not merchandise. It is the physical proof of citizenship — earned online, carried offline, stamped at the kingdom's gates.</p>
+<!-- ============================================================ CARD ECOSYSTEM TAB -->
+
+<!-- ============================================================ PASSPORT TAB -->
+<section id="tab-passport" class="tab-panel">
+  <div class="section-banner">
+    <div class="section-eyebrow">The Authorised Wormhole Travel Document</div>
+    <h2 class="section-title">The Passport — The Missing Link</h2>
+    <p class="section-desc">Earned online. Carried offline. Stamped at the kingdom's gates. The physical proof of citizenship.</p>
+  </div>
+
+  <div class="highlight-box" style="margin-bottom:32px;">
+    <div class="box-title">Why the Passport Matters</div>
+    <p>The passport is the single object that bridges the digital and physical kingdom. A citizen earns it through daily blessings — it arrives at their door — they carry it to the festival — they fill it with stamps — and one day, when the NFC chip is embedded, it becomes a live connection between the two worlds. This object is not merchandise. It is the physical proof of belonging.</p>
+  </div>
 
   <div class="passport-visual">
     <div class="passport-book">
       <span class="passport-emblem">📘</span>
       <div class="passport-title">AUTHORISED<br>WORMHOLE TRAVEL<br>DOCUMENT</div>
-      <div style="font-family:'Crimson Pro',serif;font-size:13px;color:var(--silver);font-style:italic;">"You will never dream alone"</div>
+      <div style="font-family:'Crimson Pro',serif;font-size:13px;color:var(--silver-ley);font-style:italic;">"You will never dream alone"</div>
       <div class="stamp-row">
         <div class="stamp earned">🐾</div>
         <div class="stamp earned">🚀</div>
         <div class="stamp earned">🏴‍☠️</div>
-        <div class="stamp"></div>
+        <div class="stamp earned">🧝</div>
         <div class="stamp"></div>
         <div class="stamp"></div>
       </div>
-      <div style="font-family:'Inter',sans-serif;font-size:10px;color:var(--silver);margin-top:12px;opacity:0.6;">Stamps collected at each embassy · Tourist Info Booth · Entrance</div>
+      <div style="font-family:'Inter',sans-serif;font-size:10px;color:var(--silver-ley);margin-top:12px;opacity:.6;">Stamps at each Embassy · Tourist Info Booth · Entrance · Selected vendors</div>
     </div>
-    <div class="passport-phase">
+    <div class="passport-phases">
       <div class="phase-row">
         <div class="phase-num">1</div>
         <div>
           <div class="phase-title">Digital Passport — Earn Online</div>
-          <div class="phase-desc">Collect the passport blessing on 5 of its 9 appearance days (4 Aug – 17 Sep). Earns the digital passport + stamps into your Digital Wallet.</div>
+          <div class="phase-desc">Collect the passport blessing on 5 of its 9 appearance days (4 Aug – 17 Sep). Earns the digital passport into your Digital Wallet. Also earn digital stamps as separate blessings.</div>
         </div>
       </div>
-      <div class="phase-row">
-        <div class="phase-num">2</div>
+      <div class="phase-row" style="border-color:rgba(201,168,76,0.3);">
+        <div class="phase-num" style="color:rgba(201,168,76,0.5);">2</div>
         <div>
-          <div class="phase-title">Physical Passport — Sent to Your Door</div>
-          <div class="phase-desc">Earn the digital passport <strong>AND</strong> a passport holder at least 5 times each → Amalin dispatches the physical passport by post. Free to earn; €3.95 shipping or free festival pickup.</div>
+          <div class="phase-title">Physical Passport — Shipped to Your Door</div>
+          <div class="phase-desc">Earn the digital passport <strong>AND</strong> a passport holder each at least 5× → system flags the citizen → Amalin reviews and dispatches by post. €3.95 shipping or free festival pickup at Tourist Info Booth.</div>
         </div>
       </div>
       <div class="phase-row">
         <div class="phase-num">3</div>
         <div>
           <div class="phase-title">Festival Stamps — Bring It to Arcen</div>
-          <div class="phase-desc">Physical passport collected at Tourist Info Booth or delivered. Stamped at each embassy, entrance, and selected vendors. Every stamp is a memory of the kingdom.</div>
+          <div class="phase-desc">Bring your physical passport to the festival. Stamped at each embassy, entrance, and selected vendors. Every stamp is a physical memory. Each embassy issues its own unique customs stamp.</div>
         </div>
       </div>
       <div class="phase-row" style="border-color:rgba(107,79,160,0.3);">
         <div class="phase-num" style="color:rgba(160,122,208,0.4);">4</div>
         <div>
-          <div class="phase-title" style="color:#c09de8;">NFC Upgrade — Coming 2027</div>
-          <div class="phase-desc">Physical passport upgraded with embedded NFC chip. Tap at festival stations to sync physical stamps with the digital wallet. The two worlds fully merge. <em>Luso builds; Amalin dispatches.</em></div>
+          <div class="phase-title" style="color:#c09de8;">NFC Upgrade — 2027</div>
+          <div class="phase-desc">Physical passport upgraded with embedded NFC chip. Tap at festival NFC readers to sync physical stamps with the Digital Wallet. Online stamps and offline stamps finally live in the same place. Luso builds; Amalin dispatches.</div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="highlight gold">
-    <div class="highlight-title">Amalin owns passport dispatch</div>
-    <p>When a citizen qualifies for a physical passport (digital passport + holder both earned 5×), the system flags them. Amalin reviews the queue, confirms the address, and dispatches via post. Maximum 500 shipments per month (EasyParcel → transitioning to NL fulfilment). This is a human-checked process — no automation on physical dispatch until volume demands it.</p>
+  <div class="lore-divider"><span>◆</span></div>
+
+  <div class="section-banner">
+    <div class="section-eyebrow">Operations</div>
+    <h2 class="section-title">Passport Dispatch — How It Works</h2>
+    <p class="section-desc">Human-checked process · Amalin owns dispatch · 500 shipments/month maximum</p>
+  </div>
+
+  <div class="card-grid card-grid-3">
+    <div class="lore-card moss-accent">
+      <div class="card-label moss">Trigger</div>
+      <div class="card-title">When to Ship</div>
+      <div class="card-body">System automatically flags a citizen when they have earned the digital passport AND a passport holder each at least 5 times. Amalin receives a notification or reviews a dispatch queue. She confirms the postal address and approves before any shipment goes out.</div>
+    </div>
+    <div class="lore-card">
+      <div class="card-label">Logistics</div>
+      <div class="card-title">Current Setup</div>
+      <div class="card-body"><ul>
+        <li>Via EasyParcel (current)</li>
+        <li>Transitioning to NL fulfilment centre</li>
+        <li>A4 size max, 100g max, postal box</li>
+        <li>Max 500 shipments per month</li>
+        <li>€3.95 per shipment (citizen pays)</li>
+        <li>Festival pickup always free alternative</li>
+      </ul></div>
+    </div>
+    <div class="lore-card silver-accent">
+      <div class="card-label silver">Upgrade Path</div>
+      <div class="card-title">NFC Passport — 2027</div>
+      <div class="card-body">The same physical passport, upgraded with an embedded NFC chip. Citizens who already have a standard passport will be offered the upgrade. New citizens from 2027 onward receive the NFC version by default. Luso designs the reader integration at the festival.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box silver-box">
+    <div class="box-title">The Passport Holder</div>
+    <p>The red passport holder is earned as a separate blessing (5 of 9 appearance days, its own 9-day schedule). It is not required to earn the physical passport — but citizens who earn both receive the passport pre-sleeved. The holder is a designed object with Elfia branding — not a generic cover.</p>
+  </div>
+</section>
+<section id="tab-cards" class="tab-panel">
+  <div class="section-banner">
+    <div class="section-eyebrow">Card Ecosystem — Elfia Planet Cards (EPC)</div>
+    <h2 class="section-title">The Collectible Card Universe</h2>
+    <p class="section-desc">42 cards across 7 sets · Digital wallet · Physical sleeve at festival · Citizens collect, lock, and redeem</p>
+  </div>
+
+  <div class="card-grid card-grid-3">
+    <div class="lore-card">
+      <span class="card-icon">🃏</span>
+      <div class="card-label">Full Set</div>
+      <div class="card-title">EPC — Elfia Planet Cards</div>
+      <div class="card-body">42 cards total across 7 period sets (6 cards each). Each set tied to a festival period. Citizens collect cards through Daily Blessings cycles. <strong>10 cards designed as of June 2026.</strong></div>
+    </div>
+    <div class="lore-card ember-accent">
+      <span class="card-icon">✨</span>
+      <div class="card-label ember">Rarity Tiers</div>
+      <div class="card-title">Card Types per Set</div>
+      <div class="card-body"><ul>
+        <li>4 × Common cards</li>
+        <li>1 × Uncommon card</li>
+        <li>1 × Holographic card</li>
+      </ul></div>
+    </div>
+    <div class="lore-card silver-accent">
+      <span class="card-icon">💎</span>
+      <div class="card-label silver">Digital Wallet Lock</div>
+      <div class="card-title">Collect 3× to Lock</div>
+      <div class="card-body">Each card appears 5× in its blessing cycle. Collect any single card on <strong>3 different days</strong> and it locks permanently into your Digital Wallet. Locked = earned.</div>
+    </div>
+  </div>
+
+  <div class="lore-divider"><span>◆</span></div>
+
+  <div class="section-banner">
+    <div class="section-eyebrow">Phase 2 — Opens 23 September 2026</div>
+    <h2 class="section-title">ECG Sleeve — First Physical Card Reward</h2>
+    <p class="section-desc">Complete the full 6-card set at 3× each → redeem physical sleeve at Tourist Info Booth</p>
+  </div>
+
+  <div class="card-grid card-grid-2">
+    <div class="lore-card">
+      <div class="card-label">Mechanic</div>
+      <div class="card-title">How to Earn the ECG Sleeve</div>
+      <div class="card-body"><ul>
+        <li>6 different cards in the set, each appears <strong>5 days</strong> in the cycle</li>
+        <li>Collect each card on at least <strong>2 of its 5 appearance days</strong></li>
+        <li>All 6 cards collected 2× = sleeve unlocked in Digital Wallet</li>
+        <li>Redeem sleeve at <strong>Tourist Info Booth at the festival — festival only</strong></li>
+        <li>No postal delivery option for card sleeve (festival redemption only)</li>
+      </ul></div>
+    </div>
+    <div class="lore-card ember-accent">
+      <div class="card-label ember">Branding</div>
+      <div class="card-title">ECG — Elfia Collectible Card Game</div>
+      <div class="card-body">Sleeve carries ECG branding clearly. This sleeve is the physical proof of set completion — a collector's item in its own right. The card game layer builds on top of the collection mechanic as the universe expands.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="box-title">Why Cards Were Deferred from Phase 1</div>
+    <p>The Phase 1 window (4 Aug – 17 Sep, 45 days) does not provide enough calendar space for the card mechanic to run alongside the passport/pin blessings without overloading the daily schedule. Cards launch 23 September in the next cycle, where the window is purpose-built for them.</p>
   </div>
 </section>
 
-<!-- ═══════════════════════ 6. INTERACTIVE MANGA + AI ANIME ═══════════════════════ -->
-<section class="page-section">
-  <div class="section-number">06</div>
-  <h2 class="section-heading">The Story.<br><em>The engine behind everything.</em></h2>
-  <p class="section-lead">The manga is not content. The manga is the reason to become a citizen. Every chapter is a reason to return.</p>
+<!-- ============================================================ NEWSLETTER TAB -->
+<section id="tab-newsletter" class="tab-panel">
+  <div class="section-banner">
+    <div class="section-eyebrow">Elfia Herald — Newsletter Strategy</div>
+    <h2 class="section-title">The Kingdom's Primary Communication Channel</h2>
+    <p class="section-desc">Every Tuesday · ~09:00 CET (timing always verified) · Always the day before the next manga chapter · Traffic always points to elfia.com</p>
+  </div>
 
-  <div class="cards cards-2">
-    <div class="card moss">
+  <div class="highlight-box ember-box">
+    <div class="box-title ember">Core Principles</div>
+    <p><strong>Email is primary.</strong> Social media is repurposed content only. Every CTA in every issue points to elfia.com. The footer never carries social media icons — it carries <strong>"The Kingdom lives at elfia.com."</strong><br><br>
+    <strong>Release rhythm:</strong> Every Tuesday at ~09:00 CET. Timing is always double-checked (weather, public holidays, other events can influence the exact send time). The Herald always lands the day before the next manga chapter drops on Wednesday at 18:00 CET — readers arrive already primed.</p>
+  </div>
+
+  <div class="card-grid card-grid-3" style="margin-bottom:32px;">
+    <div class="lore-card">
+      <div class="card-label">Conversion Principle #1</div>
+      <div class="card-title">Scarcity Before Atmosphere</div>
+      <div class="card-body">Every USP with a capacity limit (Elfia Temptation: 500 places; Masked Ball: 500 places) must lead with the number, not the experience. "Only 500 invitations exist" converts. "An exclusive after-dark experience" is atmosphere. Both are needed — scarcity first.</div>
+    </div>
+    <div class="lore-card ember-accent">
+      <div class="card-label ember">Conversion Principle #2</div>
+      <div class="card-title">Every Block Earns Its Place</div>
+      <div class="card-body">Until Saturday sells out, every Herald block must be written in service of the Saturday ticket. Even lifestyle content (Center Parcs) frames as "Turn Saturday Into a Weekend Escape." Every section points to one action.</div>
+    </div>
+    <div class="lore-card moss-accent">
+      <div class="card-label moss">Conversion Principle #3</div>
+      <div class="card-title">FOMO Over Features</div>
+      <div class="card-body">Subject lines and preview text are the highest-leverage moment. Features describe what exists. FOMO makes people act. Every subject line must pass this test: does it make someone stop scrolling? If not, rewrite it.</div>
+    </div>
+  </div>
+
+  <div class="lore-divider"><span>◆</span></div>
+
+  <!-- ISSUE PLAN -->
+  <div class="section-banner">
+    <div class="section-eyebrow">Elfia Herald — Issue Plan June–October 2026</div>
+    <h2 class="section-title">Ten Issues Mapped</h2>
+    <p class="section-desc">Every Tuesday · Manga chapters every Wednesday 18:00 CET · Herald always lands the day before</p>
+  </div>
+
+  <div class="newsletter-block">
+    <div class="newsletter-header">
+      <span class="newsletter-issue">ISSUE — FIXED</span>
+      <span class="newsletter-date">Tuesday 23 June 2026</span>
+    </div>
+    <div class="newsletter-body">
+      <div class="newsletter-subject">This was Vorden. Arcen is next.</div>
+      <div class="newsletter-preview">The Elf Award is revealed. The Masked Ball awaits. The Kingdom opens 4 August.</div>
+      <div class="newsletter-sections">
+        <span class="nl-section primary">① Vorden aftermovie — "This was Vorden. Arcen is next."</span>
+        <span class="nl-section story">② Who Will Earn the Elf Award? — Royal Proclamation</span>
+        <span class="nl-section">③ Mirror, Mirror on the Ball — 500 places, register 17:00</span>
+        <span class="nl-section story">④ Seed: "4 August. Register now."</span>
+        <span class="nl-section warning">Footer: elfia.com only — no social icons</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter-block">
+    <div class="newsletter-header">
+      <span class="newsletter-issue">ISSUE #2</span>
+      <span class="newsletter-date">Tuesday 7 July 2026</span>
+    </div>
+    <div class="newsletter-body">
+      <div class="newsletter-subject">Saturday may sell out before summer begins</div>
+      <div class="newsletter-preview">Patty Gurdy · Fire Show · Elfia Temptation · Center Parcs — the full Saturday story.</div>
+      <div class="newsletter-sections">
+        <span class="nl-section primary warning">Saturday ticket urgency — lead block</span>
+        <span class="nl-section">Patty Gurdy headline act announcement</span>
+        <span class="nl-section">Elfia Temptation — 500 places, register 3PM</span>
+        <span class="nl-section">Center Parcs — Turn Saturday Into a Weekend</span>
+        <span class="nl-section story">Manga chapter 3.x recap + citizen call</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter-block">
+    <div class="newsletter-header">
+      <span class="newsletter-issue">ISSUE #3</span>
+      <span class="newsletter-date">Tuesday 21 July 2026</span>
+    </div>
+    <div class="newsletter-body">
+      <div class="newsletter-subject">The Kingdom opens its doors to citizens on 4 August</div>
+      <div class="newsletter-preview">Daily Blessings begin 4 August. Register now — choose your species, join your embassy, be ready.</div>
+      <div class="newsletter-sections">
+        <span class="nl-section story">Daily Blessings — launching 4 August, primary block</span>
+        <span class="nl-section story">Citizen registration drive — species + embassy</span>
+        <span class="nl-section">4 collectibles to earn: passport, red holder, 3 pins</span>
+        <span class="nl-section primary warning">Saturday ticket urgency — secondary block</span>
+        <span class="nl-section story">Manga chapter beat + lore tease</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter-block">
+    <div class="newsletter-header">
+      <span class="newsletter-issue">ISSUE #4</span>
+      <span class="newsletter-date">Tuesday 4 August 2026 — BLESSINGS LAUNCH DAY</span>
+    </div>
+    <div class="newsletter-body">
+      <div class="newsletter-subject">Today. The Kingdom begins.</div>
+      <div class="newsletter-preview">Daily Blessings are now live. The first blessing is waiting for you at elfia.com.</div>
+      <div class="newsletter-sections">
+        <span class="nl-section story">Blessings are LIVE — Day 1 of the window</span>
+        <span class="nl-section story">How to collect — quick guide for first-timers</span>
+        <span class="nl-section primary warning">Saturday ticket urgency</span>
+        <span class="nl-section">Elfia Temptation — last call before sell-out</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter-block">
+    <div class="newsletter-header">
+      <span class="newsletter-issue">ISSUE #5</span>
+      <span class="newsletter-date">Tuesday 18 August 2026</span>
+    </div>
+    <div class="newsletter-body">
+      <div class="newsletter-subject">Saturday may be gone before you read this</div>
+      <div class="newsletter-preview">Final Saturday call. Blessings Day 15. The Kingdom is filling up.</div>
+      <div class="newsletter-sections">
+        <span class="nl-section primary warning">Saturday near sell-out — FINAL CALL</span>
+        <span class="nl-section story">Blessings update — Day 15, passport milestone close</span>
+        <span class="nl-section">Drach-oc Story Session preview</span>
+        <span class="nl-section">Dragon Egg Workshop (Darja) preview</span>
+        <span class="nl-section story">Manga chapter + citizen lore</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter-block">
+    <div class="newsletter-header">
+      <span class="newsletter-issue">ISSUE #6</span>
+      <span class="newsletter-date">Tuesday 1 September 2026 — POST SATURDAY SELLOUT</span>
+    </div>
+    <div class="newsletter-body">
+      <div class="newsletter-subject">Saturday is gone. Sunday is now the story.</div>
+      <div class="newsletter-preview">Trouble Notes. Folk Dance. The full Sunday programme — and your blessings are still running.</div>
+      <div class="newsletter-sections">
+        <span class="nl-section primary warning">Saturday sold out — Sunday conversion begins</span>
+        <span class="nl-section">Trouble Notes — Sunday exclusive act</span>
+        <span class="nl-section">Folk Dance workshops — Sunday programme reveal</span>
+        <span class="nl-section story">Blessings update — Day 29, 19 days remain</span>
+        <span class="nl-section story">Manga chapter + story arc</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter-block">
+    <div class="newsletter-header">
+      <span class="newsletter-issue">ISSUE #7</span>
+      <span class="newsletter-date">Tuesday 8 September 2026</span>
+    </div>
+    <div class="newsletter-body">
+      <div class="newsletter-subject">11 days until the gates open</div>
+      <div class="newsletter-preview">Your blessings end 17 September. Your passport is waiting. The Kingdom expects you.</div>
+      <div class="newsletter-sections">
+        <span class="nl-section primary warning">Festival countdown — 11 days</span>
+        <span class="nl-section story">Blessings closing 17 Sep — Day 36, final stretch</span>
+        <span class="nl-section">Redemption guide: ship or festival pickup</span>
+        <span class="nl-section">Embassy Credential Tour programme preview</span>
+        <span class="nl-section story">Manga chapter — pre-festival tension</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter-block">
+    <div class="newsletter-header">
+      <span class="newsletter-issue">ISSUE #8</span>
+      <span class="newsletter-date">Tuesday 15 September 2026</span>
+    </div>
+    <div class="newsletter-body">
+      <div class="newsletter-subject">4 days. The Kingdom opens Saturday.</div>
+      <div class="newsletter-preview">Last blessing days. Final practical guide. See you at the gates.</div>
+      <div class="newsletter-sections">
+        <span class="nl-section primary warning">4-day countdown — final festival urgency</span>
+        <span class="nl-section story">Blessings close in 2 days — Day 43 of 45</span>
+        <span class="nl-section">Practical guide: schedule, parking, shuttle, costume tips</span>
+        <span class="nl-section">What to do at the Tourist Info Booth</span>
+        <span class="nl-section story">Final manga chapter before festival</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter-block">
+    <div class="newsletter-header">
+      <span class="newsletter-issue">ISSUE #9</span>
+      <span class="newsletter-date">Tuesday 22 September 2026 — POST-FESTIVAL</span>
+    </div>
+    <div class="newsletter-body">
+      <div class="newsletter-subject">The Kingdom does not sleep when the gates close</div>
+      <div class="newsletter-preview">What happened at Arcen 2026 — and what comes next for every citizen.</div>
+      <div class="newsletter-sections">
+        <span class="nl-section story">Festival wrap — moments from the Kingdom</span>
+        <span class="nl-section story">New blessings cycle opens 23 Sep — ECG cards launch</span>
+        <span class="nl-section">Royal Election announcement — coming October</span>
+        <span class="nl-section">Vorden 2027 — first mention</span>
+        <span class="nl-section story">Post-festival lore drop · manga chapter</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter-block">
+    <div class="newsletter-header">
+      <span class="newsletter-issue">ISSUE #10</span>
+      <span class="newsletter-date">Tuesday 6 October 2026</span>
+    </div>
+    <div class="newsletter-body">
+      <div class="newsletter-subject">The Kingdom is seeking its next rulers</div>
+      <div class="newsletter-preview">The Royal Election is open. Benji &amp; Anique announce the succession. Who will reign at Vorden 2027?</div>
+      <div class="newsletter-sections">
+        <span class="nl-section story">Royal Election launch — primary block</span>
+        <span class="nl-section">Benji &amp; Anique announcement</span>
+        <span class="nl-section story">ECG cards progress — are you collecting?</span>
+        <span class="nl-section">How to register as candidate</span>
+        <span class="nl-section story">Manga chapter + next arc introduction</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box silver-box" style="margin-top:24px;">
+    <div class="box-title">Key Dates Reference</div>
+    <p>Herald: every <strong>Tuesday ~09:00 CET</strong> (timing verified per issue) · Manga chapters: every <strong>Wednesday 18:00 CET</strong> · Daily Blessings Phase 1: <strong>4 Aug – 17 Sep</strong> · New cycle: <strong>23 Sep</strong> (ECG cards) · Saturday sell-out target: <strong>~mid-August</strong> → triggers Sunday conversion switch</p>
+  </div>
+</section>
+
+<!-- ============================================================ CALENDAR TAB -->
+<section id="tab-calendar" class="tab-panel">
+  <div class="section-banner">
+    <div class="section-eyebrow">Kingdom Calendar — 2026–2027</div>
+    <h2 class="section-title">The Year-Round Rhythm</h2>
+    <p class="section-desc">Festivals · Blessings cycles · Newsletter · Manga · Royal succession · Germany expansion</p>
+  </div>
+
+  <div class="card-grid card-grid-2">
+    <div class="lore-card">
+      <span class="card-icon">🏰</span>
+      <div class="card-label">Festival 1 — 2026</div>
+      <div class="card-title">Elfia Vorden — April 2026</div>
+      <div class="card-body">Spring festival. Vassal King Benji and Queen Anique reign. Daily Blessings not yet active — pre-phase. Saturday sold out first; Sunday conversion model established.</div>
+    </div>
+    <div class="lore-card ember-accent">
+      <span class="card-icon">⚔️</span>
+      <div class="card-label ember">Festival 2 — 2026</div>
+      <div class="card-title">Elfia Arcen — 19–20 September 2026</div>
+      <div class="card-body">Primary target for 2026 strategy. ~370 Saturday tickets remaining as of June 2026. Daily Blessings Phase 1 runs 4 Aug – 17 Sep feeding directly into festival weekend. Royal handover preparation begins.</div>
+    </div>
+    <div class="lore-card silver-accent">
+      <span class="card-icon">🌟</span>
+      <div class="card-label silver">Possible Festival 3 — 2027</div>
+      <div class="card-title">Early August Festival — TBC</div>
+      <div class="card-body">Third festival in planning for early August 2027. Format and location TBC. Would create a three-festival year (spring, summer, autumn) for the first time.</div>
+    </div>
+    <div class="lore-card">
+      <span class="card-icon">🇩🇪</span>
+      <div class="card-label">Expansion</div>
+      <div class="card-title">Elfia Germany — From 2027</div>
+      <div class="card-body">German market entry confirmed for 2027. Target audience: cosplay and fantasy community aged 18–45 in Germany and the Netherlands. Citizenship/passport system extends across both markets.</div>
+    </div>
+  </div>
+
+  <div class="lore-divider"><span>◆</span></div>
+
+  <div class="section-banner">
+    <div class="section-eyebrow">Daily Blessings — 2026 Cycles</div>
+    <h2 class="section-title">Blessing Windows</h2>
+    <p class="section-desc">Phase 1 closes 17 Sep · Phase 2 (ECG Cards) opens 23 Sep</p>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="card-label" style="margin-bottom:2px;">4 August 2026</div>
+      <div class="card-title" style="font-size:15px;">Daily Blessings Phase 1 Opens</div>
+      <div class="card-body" style="font-size:14px;">Passport · Holder Red · 3 Pins. 4 items × 9 days = 36 days. One blessing per day maximum. Citizens must register species + embassy to collect.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="card-label" style="margin-bottom:2px;">17 September 2026</div>
+      <div class="card-title" style="font-size:15px;">Phase 1 Closes</div>
+      <div class="card-body" style="font-size:14px;">Last day citizens can collect Phase 1 blessings. Citizens who have earned items choose ship or festival pickup at this point.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="card-label" style="margin-bottom:2px;">19–20 September 2026</div>
+      <div class="card-title" style="font-size:15px;">Elfia Arcen Festival</div>
+      <div class="card-body" style="font-size:14px;">Phase 1 festival pickup available at Tourist Info Booth. Vassal King and Queen Benji and Anique continue their reign.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="card-label" style="margin-bottom:2px;">23 September 2026</div>
+      <div class="card-title" style="font-size:15px;">Phase 2 Opens — ECG Cards</div>
+      <div class="card-body" style="font-size:14px;">New blessing cycle begins. First 6-card EPC set launches. Collect each card 2× across 5 appearance days. Complete the set → earn physical ECG sleeve (festival pickup only).</div>
+    </div>
+    <div class="timeline-item">
+      <div class="card-label" style="margin-bottom:2px;">October 2026</div>
+      <div class="card-title" style="font-size:15px;">Royal Election Begins</div>
+      <div class="card-body" style="font-size:14px;">Democratic election process opens. Citizens may register as candidates for King and Queen of Elfia. Process runs October 2026 → April 2027.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="card-label" style="margin-bottom:2px;">April 2027</div>
+      <div class="card-title" style="font-size:15px;">Elfia Vorden 2027 — Royal Handover</div>
+      <div class="card-body" style="font-size:14px;">Ceremonial handover at festival. New King and Queen of Elfia crowned. Benji and Anique step down as Vassal monarchs.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ MERCHANTS & GUILD TAB -->
+<section id="tab-merchants" class="tab-panel">
+  <div class="section-banner">
+    <div class="section-eyebrow">Merchants, Innkeepers &amp; Street Food Guilds</div>
+    <h2 class="section-title">The Commercial Kingdom</h2>
+    <p class="section-desc">Language shapes world — "exhibitors" and "caterers" are gone · Everyone is a citizen of the kingdom</p>
+  </div>
+
+  <div class="highlight-box">
+    <div class="box-title">Why Language Matters Here</div>
+    <p>The shift from "exhibitors" to "Merchants, Innkeepers, and Street Food Guilds" is not cosmetic. It reinforces the immersive kingdom identity at every touchpoint. When vendors see themselves as guild members, they communicate differently, present differently, and invest more deeply in the world.</p>
+  </div>
+
+  <div class="card-grid card-grid-3">
+    <div class="lore-card">
+      <span class="card-icon">⚔️</span>
+      <div class="card-label">Guild Type 1</div>
+      <div class="card-title">Merchants</div>
+      <div class="card-body">Product and craft vendors. Sell goods aligned with the fantasy/cosplay world. In the kingdom: guild members who trade their wares at the market square.</div>
+    </div>
+    <div class="lore-card ember-accent">
+      <span class="card-icon">🍺</span>
+      <div class="card-label ember">Guild Type 2</div>
+      <div class="card-title">Innkeepers</div>
+      <div class="card-body">Food and hospitality vendors. In the kingdom: innkeepers who feed and shelter the citizens. Formerly "caterers" — the role is the same, the identity is richer.</div>
+    </div>
+    <div class="lore-card silver-accent">
+      <span class="card-icon">🧪</span>
+      <div class="card-label silver">Guild Type 3</div>
+      <div class="card-title">Elfia Elixir Bars</div>
+      <div class="card-body">We brew and sell our own health elixirs. The Elixir Bar is part tavern, part apothecary — a distinctly Elfia creation rooted in the world of Planet Eve.</div>
+    </div>
+  </div>
+
+  <div class="lore-divider"><span>◆</span></div>
+
+  <div class="highlight-box silver-box">
+    <div class="box-title">Upcoming Work</div>
+    <p>Guild application forms, guild charter language, and merchant-facing communications all need to reflect the new terminology before Arcen 2026. This is not yet done — flag for team (Charlotte / Kevin / Amalin) before vendor communications go out.</p>
+  </div>
+</section>
+
+<!-- ============================================================ ROYAL SUCCESSION TAB -->
+
+<!-- ============================================================ STORY & ANIME TAB -->
+<section id="tab-story" class="tab-panel">
+  <div class="section-banner">
+    <div class="section-eyebrow">Narrative Engine — Drach-oc Universe</div>
+    <h2 class="section-title">The Story Is the Reason to Become a Citizen</h2>
+    <p class="section-desc">Every chapter is a reason to return. Every artefact is a fragment of Planet Eve. Every character is a gateway.</p>
+  </div>
+
+  <div class="card-grid card-grid-2" style="margin-bottom:32px;">
+    <div class="lore-card moss-accent">
       <span class="card-icon">📖</span>
-      <div class="card-tag moss">Darja + Stefan · Live Now</div>
-      <h3>Interactive Manga — Drach-oc</h3>
-      <p>Chapters release every Wednesday at 18:00 CET. The interactive layer allows readers to make choices inside the story. Each chapter ends on a rehook — a question that can only be answered by returning next week. Free citizens read all chapters. Paid citizens get early access.</p>
-      <ul style="margin-top:12px;">
-        <li>Stefan: script + Dopamine Structure per chapter</li>
-        <li>Darja: art + panel composition + card designs</li>
-        <li>Luso: interactive layer on elfia.com</li>
-      </ul>
+      <div class="card-label moss">Stefan + Darja + Luso · Live Now</div>
+      <div class="card-title">Interactive Manga — Drach-oc</div>
+      <div class="card-body">
+        <p style="margin-bottom:12px;">Chapters release every Wednesday at 18:00 CET. Readers make choices inside the story. Each chapter ends on a rehook — a question that can only be answered by returning next week.</p>
+        <ul>
+          <li>Stefan: script + Dopamine Structure per chapter</li>
+          <li>Darja: art, panel composition, card artwork</li>
+          <li>Luso: interactive layer on elfia.com</li>
+          <li>Free citizens: all chapters · Knights: early access</li>
+        </ul>
+      </div>
     </div>
-    <div class="card violet">
+    <div class="lore-card" style="border-color:rgba(107,79,160,0.3);">
       <span class="card-icon">🎬</span>
-      <div class="card-tag violet">Darja + Luso · 2026–2027</div>
-      <h3>AI Anime — Little Drach-oc</h3>
-      <p>A short AI-animated series set in the Drach-oc universe. For the €10/year Knight tier. Made with <strong>Kling AI</strong> (primary animation), <strong>Runway</strong> (scene extension), and <strong>ElevenLabs</strong> (voice). Darja as art director. Luso handles pipeline and delivery. Stefan writes the scripts.</p>
-      <ul style="margin-top:12px;">
-        <li>Goal: 6 episodes, ~3–5 min each</li>
-        <li>Always ends with a call to visit elfia.com</li>
-        <li>Citizenship registration is the paywall</li>
-      </ul>
+      <div class="card-label" style="color:#a07ad0;">Darja + Luso + Stefan · 2026–2027</div>
+      <div class="card-title">AI Anime — Little Drach-oc</div>
+      <div class="card-body">
+        <p style="margin-bottom:12px;">A short AI-animated series in the Drach-oc universe. Exclusive for the €10/yr Knight tier. Darja as art director; Stefan writes scripts; Luso handles pipeline.</p>
+        <ul>
+          <li>Primary tool: <strong>Kling AI</strong> (animation)</li>
+          <li>Scene extension: <strong>Runway ML</strong></li>
+          <li>Voices: <strong>ElevenLabs</strong></li>
+          <li>Target: 6 episodes, ~3–5 min each</li>
+          <li>Always ends with a CTA to elfia.com</li>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <div class="highlight violet">
-    <div class="highlight-title">Future: Build Your Own Elfia Castle</div>
-    <p>A digital kingdom-building game where citizens construct their own corner of Planet Eve. Planned for 2028+. Every in-game object is an artefact from the manga world. Citizens who have earned more blessings and stamps unlock more building materials. The game deepens citizenship without requiring festival attendance — making Elfia a 365-day world.</p>
+  <div class="highlight-box ember-box" style="margin-bottom:32px;">
+    <div class="box-title ember">The Dopamine Structure — Every Chapter</div>
+    <p>Every manga chapter follows four layers: <strong>Stakes</strong> (what is at risk right now), <strong>Big Question</strong> (the thing the reader must know the answer to), <strong>Head Fake</strong> (the moment that appears to resolve but doesn't), and <strong>Rehook</strong> (the final beat that makes the reader desperate for the next chapter). This is not optional — it is the architecture that makes the story a citizenship engine rather than entertainment.</p>
   </div>
 
-  <div class="divider"><span>◆</span></div>
+  <div class="lore-divider"><span>◆</span></div>
 
-  <h3 style="font-family:'Cinzel',serif;font-size:18px;color:var(--parchment);margin-bottom:16px;">AI Tools — The Full Stack</h3>
-
-  <div class="ai-grid">
-    <div class="ai-tool">
-      <div class="ai-tool-name">Kling AI</div>
-      <div class="ai-tool-use">AI anime animation — Little Drach-oc</div>
-      <div class="ai-tool-owner">Darja + Luso</div>
-    </div>
-    <div class="ai-tool">
-      <div class="ai-tool-name">Runway ML</div>
-      <div class="ai-tool-use">Scene extension, video transitions</div>
-      <div class="ai-tool-owner">Luso</div>
-    </div>
-    <div class="ai-tool">
-      <div class="ai-tool-name">ElevenLabs</div>
-      <div class="ai-tool-use">Character voices for anime series</div>
-      <div class="ai-tool-owner">Stefan + Darja</div>
-    </div>
-    <div class="ai-tool">
-      <div class="ai-tool-name">Claude</div>
-      <div class="ai-tool-use">Scripts, newsletter copy, strategy docs, chatbot training</div>
-      <div class="ai-tool-owner">Stefan + Athia + Sashmita</div>
-    </div>
-    <div class="ai-tool">
-      <div class="ai-tool-name">Canva AI</div>
-      <div class="ai-tool-use">Social statics, Herald visuals, merch mockups</div>
-      <div class="ai-tool-owner">Athia + Amalin + Sashmita</div>
-    </div>
-    <div class="ai-tool">
-      <div class="ai-tool-name">CapCut AI</div>
-      <div class="ai-tool-use">Reels, TikTok, aftermovie clips</div>
-      <div class="ai-tool-owner">Sashmita</div>
-    </div>
-    <div class="ai-tool">
-      <div class="ai-tool-name">Website AI Chatbot</div>
-      <div class="ai-tool-use">Citizen service — answers all FAQ, reduces marketing load</div>
-      <div class="ai-tool-owner">Luso (build) · Athia (training)</div>
-    </div>
-    <div class="ai-tool">
-      <div class="ai-tool-name">Suno AI</div>
-      <div class="ai-tool-use">Kingdom anthem + festival music production</div>
-      <div class="ai-tool-owner">Stefan + Manuel</div>
-    </div>
+  <div class="section-banner">
+    <div class="section-eyebrow">Chapter Release Schedule</div>
+    <h2 class="section-title">The Wednesday Rhythm</h2>
+    <p class="section-desc">Every other Wednesday 18:00 CET · The Herald always lands the day before</p>
   </div>
-</section>
-
-<!-- ═══════════════════════ 7. ROLES SUMMARY ═══════════════════════ -->
-<section class="page-section">
-  <div class="section-number">07</div>
-  <h2 class="section-heading">Who does what.<br><em>One kingdom. Eleven builders.</em></h2>
-  <p class="section-lead">Every role connects back to citizenship. If the work doesn't bring someone closer to registering — ask why it's being done.</p>
 
   <div class="scroll-table">
     <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Primary Role</th>
-          <th>Citizenship Connection</th>
-          <th>AI Tool</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Chapter</th><th>Date</th><th>Primary Arc</th><th>Blessing Tie-in</th></tr></thead>
       <tbody>
-        <tr><td>Stefan</td><td>Scriptwriter · Strategy · Manga author</td><td>Every chapter and Herald is a citizenship recruitment tool</td><td class="cell-violet">Claude · ElevenLabs</td></tr>
-        <tr><td>Darja</td><td>Manga creator · Art Director · AI Anime</td><td>Artefact designs feed directly into blessing collectibles</td><td class="cell-violet">Kling AI · Runway</td></tr>
-        <tr><td>Manuel</td><td>Artist Director at festival</td><td>Acts and performances deepen the world — citizens feel they belong</td><td class="cell-violet">Suno AI</td></tr>
-        <tr><td>Kyara</td><td>Director of Actors</td><td>Custom acts tied to Elfia lore convert casual visitors into citizens</td><td>—</td></tr>
-        <tr><td>Charlotte</td><td>Deco Manager</td><td>Festival spaces are Planet Eve locations — world immersion drives registration</td><td>—</td></tr>
-        <tr><td>Kevin</td><td>Merchant Manager</td><td>Only lore-connected merchants; each stall links to elfia.com via QR</td><td>—</td></tr>
-        <tr><td>Ahmad</td><td>Innkeeper · Elixir Bar</td><td>Elixir Bar is a unique Elfia product — drives curious visitors to the website</td><td>—</td></tr>
-        <tr><td>Luso</td><td>Web Developer</td><td>Builds the citizenship engine: blessings, wallet, map, chatbot, manga layer</td><td class="cell-violet">Kling pipeline · Runway</td></tr>
-        <tr><td>Athia</td><td>Marketing</td><td>All channels point to elfia.com · AI tools reduce manual workload</td><td class="cell-violet">Claude · Canva AI</td></tr>
-        <tr><td>Sashmita</td><td>Marketing</td><td>Social repurposing from existing content — one source, five channels</td><td class="cell-violet">CapCut AI · Canva AI</td></tr>
-        <tr><td>Amalin</td><td>Marketing · Passport Dispatch</td><td>Personally oversees every physical passport shipment — the most tangible citizenship moment</td><td class="cell-violet">Claude · Canva AI</td></tr>
+        <tr><td>Chapter 3.1</td><td class="cell-moss">Live</td><td>Drach-oc and the aftermath of Long Dao</td><td>—</td></tr>
+        <tr><td>Chapter 3.2</td><td>Wed 25 Jun 2026</td><td>The hunt begins · first embassy reference</td><td>—</td></tr>
+        <tr><td>Chapter 4.1</td><td>Wed 9 Jul 2026</td><td>Planet Eve wormhole expansion</td><td>—</td></tr>
+        <tr><td>Chapter 4.2</td><td>Wed 23 Jul 2026</td><td>Blessings window seeds — lore objects introduced</td><td>Passport + Holder lore origin</td></tr>
+        <tr><td>Chapter 5.1</td><td>Wed 6 Aug 2026</td><td>Day 3 of blessings — story arc deepens</td><td>Pin №1 lore origin</td></tr>
+        <tr><td>Chapter 5.2</td><td>Wed 20 Aug 2026</td><td>Mid-arc tension · Day 17</td><td>Pin №2 lore origin</td></tr>
+        <tr><td>Chapter 6.1</td><td>Wed 3 Sep 2026</td><td>Pre-festival convergence · Day 31</td><td>Pin №3 lore origin</td></tr>
+        <tr><td>Chapter 6.2</td><td>Wed 17 Sep 2026</td><td>Festival eve · Blessings close · Cliffhanger</td><td>Blessings window closes</td></tr>
       </tbody>
     </table>
   </div>
 
-  <div class="highlight moss">
-    <div class="highlight-title">A note on the word "Innkeeper"</div>
-    <p>Innkeeper is good — it carries hospitality and world-belonging. If you want to go deeper into the Elfia universe, consider <strong>"Tavern Master"</strong> or <strong>"Guild Host"</strong> — both carry the same warmth but feel more rooted in Planet Eve. Ahmad and the team should choose what feels right for how they want to present themselves at the festival.</p>
+  <div class="lore-divider"><span>◆</span></div>
+
+  <div class="section-banner">
+    <div class="section-eyebrow">Future — 2028+</div>
+    <h2 class="section-title">Build Your Own Elfia Castle</h2>
+    <p class="section-desc">The third digital citizenship layer — after manga and anime</p>
+  </div>
+  <div class="violet-box">
+    <div class="box-title">The Kingdom-Building Game</div>
+    <p>A digital game where citizens construct their own corner of Planet Eve. Every in-game object is an artefact from the manga world. Citizens who have earned more blessings and stamps unlock more building materials. The game makes Elfia a 365-day world for citizens who have never attended a physical festival — and creates a reason for lapsed citizens to return and re-engage with their account. Planned for 2028+. Development led by Luso in partnership with external game studio.</p>
+  </div>
+
+  <div class="card-grid card-grid-2">
+    <div class="lore-card silver-accent">
+      <div class="card-label silver">Children's Prequel Series</div>
+      <div class="card-title">Little Drach-oc — Ages 6–9</div>
+      <div class="card-body">6 episodes, ~11 minutes each. Introduces Planet Eve to a younger audience and creates multi-generational kingdom citizens. Longer pipeline — not in active production. The AI anime (Knight tier) is the proof of concept that makes this viable. Darja as art director throughout.</div>
+    </div>
+    <div class="lore-card">
+      <div class="card-label">National Anthem</div>
+      <div class="card-title">"You Will Never Dream Alone"</div>
+      <div class="card-body">Kingdom anthem developed with Suno AI. Multiple genre versions: Irish/Riverdance, EDM, ethnic fusion, fantasy waltz, Viennese classical. Lyrics are timeless — no festival location names. The anchor phrase "You will never dream alone" recurs in all versions. Manuel and Stefan lead; Suno AI produces.</div>
+    </div>
   </div>
 </section>
 
-<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
-<footer class="doc-footer">
-  <p style="font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:var(--gold-light);margin-bottom:16px;">You will never dream alone.</p>
-  <p>Kingdom of Elfia · Team Playbook 2026 · <strong>elfia.com</strong></p>
-  <p style="margin-top:8px;font-size:13px;opacity:0.5;">Internal document — not for public distribution</p>
-</footer>
+<!-- ============================================================ WEBSITE & AI TAB -->
+<section id="tab-website" class="tab-panel">
+  <div class="section-banner">
+    <div class="section-eyebrow">elfia.com — The Kingdom's Home Base</div>
+    <h2 class="section-title">The Website Is the Kingdom Itself</h2>
+    <p class="section-desc">Social media is a signpost · elfia.com is the destination · Everything points inward — always</p>
+  </div>
 
-<!-- ═══════════════════════ FEEDBACK WIDGET ═══════════════════════ -->
+  <div class="highlight-box ember-box" style="margin-bottom:32px;">
+    <div class="box-title ember">The One Rule</div>
+    <p>Every piece of content produced by anyone on this team — social post, newsletter, merchant QR code, festival sign, workshop booking — has one job: send people to elfia.com. Not to Instagram. Not to a ticketing platform. To the kingdom. The website is where citizens register, collect blessings, read the manga, manage their passport, and live in the world year-round.</p>
+  </div>
+
+  <div class="card-grid card-grid-2" style="margin-bottom:32px;">
+    <div class="lore-card">
+      <span class="card-icon">🌍</span>
+      <div class="card-label">Luso · Live Now</div>
+      <div class="card-title">Europe / Earth Map — Wormhole Network</div>
+      <div class="card-body">The interactive map of Planet Eve's wormhole connection points to Earth. One of the most powerful citizenship-acquisition tools on the site — it makes the world feel real before a visitor even registers. Must be prominent on the homepage. Every Herald links to it. Every social post that references wormholes links to it.</div>
+    </div>
+    <div class="lore-card" style="border-color:rgba(107,79,160,0.3);">
+      <span class="card-icon">🤖</span>
+      <div class="card-label" style="color:#a07ad0;">Luso (build) · Athia (training) · Live</div>
+      <div class="card-title">AI Chatbot — Kingdom Citizen Service</div>
+      <div class="card-body">The chatbot exists. It needs to be trained on all kingdom knowledge: lore, festival logistics, citizenship questions, blessings rules, passport info, species lore, embassy details. Goal: answer every FAQ without involving the marketing team. Frees Athia, Sashmita, and Amalin for creation — not repetition. Athia owns the training data; Luso owns the integration.</div>
+    </div>
+  </div>
+
+  <div class="lore-divider"><span>◆</span></div>
+
+  <div class="section-banner">
+    <div class="section-eyebrow">What to Add to the Website</div>
+    <h2 class="section-title">The Next Website Priorities</h2>
+    <p class="section-desc">Ranked by citizenship impact</p>
+  </div>
+
+  <div class="scroll-table">
+    <table>
+      <thead><tr><th>#</th><th>Feature</th><th>Owner</th><th>Citizenship Impact</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td class="cell-gold">1</td><td>Daily Blessings mechanic (live 4 Aug)</td><td>Luso</td><td class="cell-moss">Core daily return engine</td><td class="cell-ember">Build before 4 Aug</td></tr>
+        <tr><td class="cell-gold">2</td><td>Digital Wallet (cards, artefacts, passport)</td><td>Luso</td><td class="cell-moss">Keeps citizens active year-round</td><td class="cell-ember">Before blessings launch</td></tr>
+        <tr><td class="cell-gold">3</td><td>Citizenship registration (species + embassy)</td><td>Luso</td><td class="cell-moss">The gateway to everything</td><td class="cell-moss">Live</td></tr>
+        <tr><td class="cell-gold">4</td><td>AI Chatbot — fully trained</td><td>Luso + Athia</td><td>Reduces friction at every FAQ moment</td><td class="cell-ember">Training ongoing</td></tr>
+        <tr><td class="cell-gold">5</td><td>Interactive manga layer</td><td>Luso + Darja</td><td class="cell-moss">Primary content reason to visit</td><td class="cell-moss">Live</td></tr>
+        <tr><td class="cell-gold">6</td><td>Wormhole map — homepage prominence</td><td>Luso</td><td>World immersion at first visit</td><td>Needs prominence</td></tr>
+        <tr><td class="cell-gold">7</td><td>Passport dispatch queue (Amalin)</td><td>Luso + Amalin</td><td>Physical citizenship moment</td><td class="cell-ember">Build before 4 Aug</td></tr>
+        <tr><td class="cell-gold">8</td><td>Paid tier subscription system (Stripe)</td><td>Luso</td><td>Revenue + deeper engagement</td><td class="cell-silver">2026–2027</td></tr>
+        <tr><td class="cell-gold">9</td><td>NFC reader integration at festival</td><td>Luso</td><td>Digital-physical merge</td><td class="cell-silver">2027</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="lore-divider"><span>◆</span></div>
+
+  <div class="section-banner">
+    <div class="section-eyebrow">Social Media — Less Work. Same Reach.</div>
+    <h2 class="section-title">AI-Accelerated Social Strategy</h2>
+    <p class="section-desc">Social repurposes content that already exists · It never creates from scratch · AI cuts the work by 70%</p>
+  </div>
+
+  <div class="card-grid card-grid-3" style="margin-bottom:32px;">
+    <div class="lore-card" style="border-color:rgba(107,79,160,0.3);">
+      <div class="card-label" style="color:#a07ad0;">Sashmita · AI Tool</div>
+      <div class="card-title">Content Repurposing</div>
+      <div class="card-body">Every manga chapter → 3 social posts. Every Herald → 1 Instagram story. Every festival moment → Reels clip. <strong>CapCut AI</strong> for Reels, <strong>Canva AI</strong> for statics, <strong>Claude</strong> for captions. One piece of content becomes five in one session.</div>
+    </div>
+    <div class="lore-card" style="border-color:rgba(107,79,160,0.3);">
+      <div class="card-label" style="color:#a07ad0;">Athia · Process</div>
+      <div class="card-title">Batch Scheduling</div>
+      <div class="card-body">Use <strong>Buffer</strong> or <strong>Later</strong> for scheduling. Batch one full week of posts in a single 2-hour session. The marketing team does not need to be on social daily — they need to be in the kingdom weekly, setting the rhythm.</div>
+    </div>
+    <div class="lore-card ember-accent">
+      <div class="card-label ember">Rule — Non-Negotiable</div>
+      <div class="card-title">Every Post Has One Job</div>
+      <div class="card-body">Every social post ends with one action: visit elfia.com. Not "follow us." Not "like this." The link in bio goes to the citizenship registration page — not the festival homepage. Social is a funnel. The website is the kingdom.</div>
+    </div>
+  </div>
+
+  <div class="section-banner">
+    <div class="section-eyebrow">AI Tools — Full Stack</div>
+    <h2 class="section-title">What We Use and Who Owns It</h2>
+    <p class="section-desc">AI accelerates every channel — less manual work, more creative output</p>
+  </div>
+
+  <div class="ai-grid">
+    <div class="ai-tool"><div class="ai-tool-name">Kling AI</div><div class="ai-tool-use">AI anime animation — Little Drach-oc</div><div class="ai-tool-owner">Darja + Luso</div></div>
+    <div class="ai-tool"><div class="ai-tool-name">Runway ML</div><div class="ai-tool-use">Scene extension, video transitions for anime</div><div class="ai-tool-owner">Luso</div></div>
+    <div class="ai-tool"><div class="ai-tool-name">ElevenLabs</div><div class="ai-tool-use">Character voices for AI anime series</div><div class="ai-tool-owner">Stefan + Darja</div></div>
+    <div class="ai-tool"><div class="ai-tool-name">Claude</div><div class="ai-tool-use">Scripts, newsletter copy, strategy docs, chatbot training, editorial</div><div class="ai-tool-owner">Stefan + Athia + Sashmita</div></div>
+    <div class="ai-tool"><div class="ai-tool-name">Canva AI</div><div class="ai-tool-use">Social statics, Herald visuals, merch mockups</div><div class="ai-tool-owner">Athia + Amalin + Sashmita</div></div>
+    <div class="ai-tool"><div class="ai-tool-name">CapCut AI</div><div class="ai-tool-use">Reels, TikTok clips, aftermovie edits</div><div class="ai-tool-owner">Sashmita</div></div>
+    <div class="ai-tool"><div class="ai-tool-name">Website AI Chatbot</div><div class="ai-tool-use">Citizen service — answers all FAQ, reduces marketing workload</div><div class="ai-tool-owner">Luso (build) · Athia (training)</div></div>
+    <div class="ai-tool"><div class="ai-tool-name">Suno AI</div><div class="ai-tool-use">Kingdom anthem + festival music production</div><div class="ai-tool-owner">Stefan + Manuel</div></div>
+    <div class="ai-tool"><div class="ai-tool-name">Buffer / Later</div><div class="ai-tool-use">Social scheduling — batch weekly in one session</div><div class="ai-tool-owner">Athia</div></div>
+  </div>
+</section>
+<section id="tab-royals" class="tab-panel">
+  <div class="section-banner">
+    <div class="section-eyebrow">Royal Succession — The Crown of Elfia</div>
+    <h2 class="section-title">From Vassal Kingdom to Democratic Monarchy</h2>
+    <p class="section-desc">Benji &amp; Anique reign through Arcen 2026 · Election Oct 2026–Apr 2027 · Handover at Vorden 2027</p>
+  </div>
+
+  <div class="card-grid card-grid-2">
+    <div class="lore-card">
+      <span class="card-icon">👑</span>
+      <div class="card-label">Current Reign</div>
+      <div class="card-title">Vassal King Benji &amp; Queen Anique</div>
+      <div class="card-body">Continue as King and Queen of Elfia through and including Elfia Arcen, 19–20 September 2026. Their reign closes ceremonially at Vorden 2027 with the handover to the democratically elected successors.</div>
+    </div>
+    <div class="lore-card ember-accent">
+      <span class="card-icon">🗳️</span>
+      <div class="card-label ember">Succession Mechanism</div>
+      <div class="card-title">Democratic Election</div>
+      <div class="card-body">For the first time in the Kingdom of Elfia, the crown will be chosen by the citizens. The election is not ceremonial — the process is genuine and the result binding. Citizens vote; citizens decide.</div>
+    </div>
+  </div>
+
+  <div class="section-banner" style="margin-top:32px;">
+    <div class="section-eyebrow">Election Timeline</div>
+    <h2 class="section-title">The Democratic Sequence</h2>
+    <p class="section-desc">October 2026 through April 2027</p>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="card-label" style="margin-bottom:2px;">October 2026</div>
+      <div class="card-title" style="font-size:15px;">Election Opens</div>
+      <div class="card-body" style="font-size:14px;">Announcement to all citizens. Candidate registration opens. Newsletter Issue #8 (8 October) is the official launch communication: <em>"The Kingdom is seeking its next rulers."</em></div>
+    </div>
+    <div class="timeline-item">
+      <div class="card-label" style="margin-bottom:2px;">October 2026 – March 2027</div>
+      <div class="card-title" style="font-size:15px;">Campaign &amp; Voting Period</div>
+      <div class="card-body" style="font-size:14px;">Candidates campaign within the Kingdom. Citizens vote through elfia.com. Voting mechanics, eligibility criteria, and campaign rules TBD.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="card-label" style="margin-bottom:2px;">April 2027</div>
+      <div class="card-title" style="font-size:15px;">Elfia Vorden 2027 — Ceremonial Handover</div>
+      <div class="card-body" style="font-size:14px;">New King and Queen of Elfia crowned at the festival. Benji and Anique step down in a ceremonial transition. The moment is a festival centerpiece — designed for maximum emotional impact and community ownership.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box ember-box">
+    <div class="box-title ember">Open Design Questions</div>
+    <p>Voting eligibility (registered citizens only? ticket holders? all newsletter subscribers?), campaign format, and whether candidates run as pairs or individually are all still to be decided. These must be locked before the October 2026 election launch communication goes out.</p>
+  </div>
+</section>
+
+<!-- ============================================================ ROADMAP TAB -->
+
+<!-- ============================================================ TEAM & ROLES TAB -->
+<section id="tab-team" class="tab-panel">
+  <div class="section-banner">
+    <div class="section-eyebrow">The Kingdom's Builders</div>
+    <h2 class="section-title">One Kingdom. Eleven Builders.</h2>
+    <p class="section-desc">Every role connects back to citizenship · If the work doesn't bring someone closer to registering — ask why it's being done</p>
+  </div>
+
+  <div class="team-pill-grid">
+    <div class="team-pill"><span class="t-icon">✍️</span><span class="t-name">Stefan</span><span class="t-role">Scriptwriter & Strategy</span></div>
+    <div class="team-pill"><span class="t-icon">🎨</span><span class="t-name">Darja</span><span class="t-role">Manga Creator & Art Director</span></div>
+    <div class="team-pill"><span class="t-icon">🎭</span><span class="t-name">Manuel</span><span class="t-role">Artist Director, Festival</span></div>
+    <div class="team-pill"><span class="t-icon">🎬</span><span class="t-name">Kyara</span><span class="t-role">Director of Actors</span></div>
+    <div class="team-pill"><span class="t-icon">🌿</span><span class="t-name">Charlotte</span><span class="t-role">Deco Manager</span></div>
+    <div class="team-pill"><span class="t-icon">🏪</span><span class="t-name">Kevin</span><span class="t-role">Merchant Manager</span></div>
+    <div class="team-pill"><span class="t-icon">🧪</span><span class="t-name">Ahmad</span><span class="t-role">Innkeeper & Elixir Bar</span></div>
+    <div class="team-pill"><span class="t-icon">💻</span><span class="t-name">Luso</span><span class="t-role">Web Developer</span></div>
+    <div class="team-pill"><span class="t-icon">📢</span><span class="t-name">Athia</span><span class="t-role">Marketing</span></div>
+    <div class="team-pill"><span class="t-icon">📢</span><span class="t-name">Sashmita</span><span class="t-role">Marketing</span></div>
+    <div class="team-pill"><span class="t-icon">📮</span><span class="t-name">Amalin</span><span class="t-role">Marketing · Passport Dispatch</span></div>
+  </div>
+
+  <div class="scroll-table">
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Primary Role</th><th>Citizenship Connection</th><th>AI Tool</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Stefan</td><td>Scriptwriter · Strategy · Manga author</td><td>Every chapter and Herald is a citizenship recruitment tool. All strategy flows from Stefan's universe-building.</td><td class="cell-gold">Claude · ElevenLabs · Suno</td></tr>
+        <tr><td>Darja</td><td>Manga creator · Art Director · AI Anime</td><td>Artefact designs feed directly into blessing collectibles. Every pin and card ties to a character or location she has illustrated.</td><td class="cell-gold">Kling AI · Runway</td></tr>
+        <tr><td>Manuel</td><td>Artist Director at festival</td><td>Acts and performances deepen the world. Citizens who experience a custom act feel they belong to something real — and register.</td><td class="cell-gold">Suno AI</td></tr>
+        <tr><td>Kyara</td><td>Director of Actors</td><td>Custom acts tied to Elfia lore convert casual visitors into citizens. Every performance should end with a reason to go to elfia.com.</td><td>—</td></tr>
+        <tr><td>Charlotte</td><td>Deco Manager</td><td>Festival spaces are Planet Eve locations. Immersion in the world drives registration. Every deco area should feel like a chapter of the story.</td><td>—</td></tr>
+        <tr><td>Kevin</td><td>Merchant Manager</td><td>Only lore-connected merchants. Each stall links to elfia.com via QR code. Kevin's brief: every merchant should feel like a guild member.</td><td>—</td></tr>
+        <tr><td>Ahmad</td><td>Innkeeper &amp; Elixir Bar Manager</td><td>The Elfia Elixir Bar is a unique Elfia product. Every interaction is a world-building moment. QR codes at the bar link to citizenship registration.</td><td>—</td></tr>
+        <tr><td>Luso</td><td>Web Developer</td><td>Builds the entire citizenship engine: blessings mechanic, digital wallet, wormhole map, chatbot, interactive manga layer, NFC integration (2027).</td><td class="cell-gold">Kling pipeline · Runway · Chatbot AI</td></tr>
+        <tr><td>Athia</td><td>Marketing</td><td>All channels point to elfia.com. AI tools reduce manual workload. Owns the chatbot training data. First point of contact for citizen questions until chatbot is fully trained.</td><td class="cell-gold">Claude · Canva AI · Buffer</td></tr>
+        <tr><td>Sashmita</td><td>Marketing</td><td>Social repurposing from existing content. One source, five channels. Batches the week in one session using AI tools.</td><td class="cell-gold">CapCut AI · Canva AI</td></tr>
+        <tr><td>Amalin</td><td>Marketing · Passport Dispatch</td><td>Personally oversees every physical passport shipment. The most tangible citizenship moment in the entire system passes through her hands.</td><td class="cell-gold">Claude · Canva AI</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="lore-divider"><span>◆</span></div>
+
+  <div class="section-banner">
+    <div class="section-eyebrow">Festival Team — How the World Gets Built on the Ground</div>
+    <h2 class="section-title">Physical Kingdom = Digital Recruitment</h2>
+    <p class="section-desc">Every festival touchpoint is a citizenship acquisition moment</p>
+  </div>
+
+  <div class="card-grid card-grid-3">
+    <div class="lore-card ember-accent">
+      <div class="card-label ember">Manuel + Kyara</div>
+      <div class="card-title">Custom Acts — Lore-First</div>
+      <div class="card-body">Every performance at Elfia Arcen 2026 should be evaluated against one question: does it deepen the world of Planet Eve? Kyara increasingly creates custom acts that fit the Elfia story — not generic medieval entertainment bought from an agency. Manuel ensures the artistic direction is cohesive across all acts. Over time: no act appears at Elfia that doesn't belong to the world.</div>
+    </div>
+    <div class="lore-card">
+      <div class="card-label">Kevin</div>
+      <div class="card-title">Merchant QR Ecosystem</div>
+      <div class="card-body">Every merchant stall carries a Kingdom QR code. Visitors who scan it land on the citizenship registration page — not the merchant's Instagram. Kevin briefs every merchant before the festival. The QR is part of the kingdom, not an afterthought. Merchants who are already Elfia citizens themselves set the standard for how to talk about the world.</div>
+    </div>
+    <div class="lore-card silver-accent">
+      <div class="card-label silver">Charlotte</div>
+      <div class="card-title">Deco as Set Design</div>
+      <div class="card-body">Charlotte works from the story bible, not from Pinterest. Each area of the festival corresponds to a location in Planet Eve. The main stage area is the Elfia Great Hall. The merchant square is the Trade Quarter of Kapteins Baai. The Elixir Bar is the Alchemist District. When citizens enter a space and recognise it from the manga, citizenship conversion spikes.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box moss-box">
+    <div class="box-title moss">On the word "Innkeeper"</div>
+    <p>Innkeeper is solid — it carries hospitality and world-belonging. If the team wants to go deeper into Planet Eve language: <strong>"Tavern Master"</strong> carries authority and history; <strong>"Guild Host"</strong> is warmer and more communal. Ahmad and the team should choose what fits how they want to present the Elixir Bar experience. Whatever they choose, it should appear on every piece of festival signage, the website, and the Herald.</p>
+  </div>
+</section>
+<section id="tab-roadmap" class="tab-panel">
+  <div class="section-banner">
+    <div class="section-eyebrow">Strategic Roadmap — 2026 to 2035</div>
+    <h2 class="section-title">The Kingdom's Long Arc</h2>
+    <p class="section-desc">Festival → Citizenship → Living Kingdom → Global Expansion</p>
+  </div>
+
+  <div class="card-grid card-grid-3">
+    <div class="lore-card ember-accent">
+      <span class="card-icon">🎪</span>
+      <div class="card-label ember">Now — 2026</div>
+      <div class="card-title">People Buy Tickets</div>
+      <div class="card-body">Visitors attend festivals. Relationship begins and ends at the gate. Revenue is transactional. Connection fades after the weekend. <strong>Breaking point: 2026 systems launch.</strong></div>
+    </div>
+    <div class="lore-card">
+      <span class="card-icon">🐉</span>
+      <div class="card-label">Transition — 2026–2027</div>
+      <div class="card-title">People Become Citizens</div>
+      <div class="card-body">Visitors receive passports. They choose a species and embassy. They collect daily blessings. The festival becomes the physical climax of a year-round story. Germany expansion begins.</div>
+    </div>
+    <div class="lore-card moss-accent">
+      <span class="card-icon">🌍</span>
+      <div class="card-label moss">Future — 2028–2035</div>
+      <div class="card-title">The Kingdom Lives 365 Days</div>
+      <div class="card-body">AI companions. AR experiences. A digital kingdom-building game. International citizens who have never attended a festival are still part of Planet Eve.</div>
+    </div>
+  </div>
+
+  <div class="lore-divider"><span>◆</span></div>
+
+  <div class="section-banner">
+    <div class="section-eyebrow">Festival Scale Targets</div>
+    <h2 class="section-title">Growth by Year</h2>
+    <p class="section-desc">Festivals multiply · Citizenship is the primary metric · Revenue follows</p>
+  </div>
+
+  <div class="card-grid card-grid-4">
+    <div class="lore-card">
+      <span class="card-icon">🏰</span>
+      <div class="card-label">2026</div>
+      <div class="card-title">2 Festivals</div>
+      <div class="card-body">Vorden (April) + Arcen (September). Daily Blessings Phase 1 launches. Citizenship system goes live.</div>
+    </div>
+    <div class="lore-card">
+      <span class="card-icon">⚔️</span>
+      <div class="card-label">2027</div>
+      <div class="card-title">3 Festivals</div>
+      <div class="card-body">Add possible early August festival. Germany expansion begins. Royal Election completes at Vorden 2027.</div>
+    </div>
+    <div class="lore-card">
+      <span class="card-icon">🌟</span>
+      <div class="card-label">2029</div>
+      <div class="card-title">5 Festivals</div>
+      <div class="card-body">Full multi-country calendar. NL + DE + expansion markets. Digital kingdom layer active.</div>
+    </div>
+    <div class="lore-card moss-accent">
+      <span class="card-icon">🌍</span>
+      <div class="card-label moss">2030–2035</div>
+      <div class="card-title">365-Day Kingdom</div>
+      <div class="card-body">42 EPC cards complete. AI Dragon Ally system live. Citizens who never attend a physical festival remain active kingdom members.</div>
+    </div>
+  </div>
+
+  <div class="lore-divider"><span>◆</span></div>
+
+  <div class="section-banner">
+    <div class="section-eyebrow">Transmedia Pipeline</div>
+    <h2 class="section-title">Drach-oc Universe Expansion</h2>
+    <p class="section-desc">Novel · Manga · Card Game · Festival · Citizenship · Children's Series</p>
+  </div>
+
+  <div class="card-grid card-grid-2">
+    <div class="lore-card">
+      <div class="card-label">Active</div>
+      <div class="card-title">Drach-oc Novel — 18+ Chapters</div>
+      <div class="card-body">Primary narrative engine for Planet Eve / Drach-oc universe. 18+ chapters written. Editorial review through Chapter 17 complete. Chapter 18 in progress. Feeds directly into manga and festival world-building.</div>
+    </div>
+    <div class="lore-card">
+      <div class="card-label">Active</div>
+      <div class="card-title">Manga — Drach-oc</div>
+      <div class="card-body">Chapters release every other Wednesday at 18:00 CET. Chapter 3.1 released Friday 20 June 2025 (exception). Dopamine structure rule: every chapter needs stakes, big question, head fake, and rehook.</div>
+    </div>
+    <div class="lore-card silver-accent">
+      <div class="card-label silver">Pipeline</div>
+      <div class="card-title">Children's Prequel Series</div>
+      <div class="card-body">Ages 6–9. 6 episodes, approximately 11 minutes each. Longer-term pipeline — not in active production. Designed to introduce Planet Eve to a younger audience and create multi-generational kingdom citizens.</div>
+    </div>
+    <div class="lore-card moss-accent">
+      <div class="card-label moss">Active — Phase 2</div>
+      <div class="card-title">Elfia Collectible Card Game (ECG)</div>
+      <div class="card-body">42 cards total (EPC set). 10 cards designed as of June 2026. First set of 6 launches in Daily Blessings Phase 2 from 23 September. Physical card game layer builds on top of collection mechanic.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CLOSING SCRIPT -->
+<script>
+  function switchTab(name) {
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => {
+      if (t.getAttribute('onclick') === "switchTab('" + name + "')") t.classList.add('active');
+
+</main>
+
+<script>
+  function switchTab(name) {
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => {
+      if (t.getAttribute('onclick') === "switchTab('" + name + "')") t.classList.add('active');
+    });
+    const panel = document.getElementById('tab-' + name);
+    if (panel) { panel.classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
+  }
+</script>
+
+<!-- ── FEEDBACK WIDGET ── -->
+<style>
+#feedback-btn {
+  position: fixed; bottom: 28px; right: 28px; z-index: 1000;
+  background: var(--dragon-gold); color: var(--ink);
+  border: none; border-radius: 50px; padding: 12px 22px;
+  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1px;
+  cursor: pointer; box-shadow: 0 4px 24px rgba(201,168,76,0.4);
+  display: flex; align-items: center; gap: 8px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+#feedback-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 32px rgba(201,168,76,0.55); }
+#feedback-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.65); z-index: 1001;
+  align-items: center; justify-content: center; padding: 24px;
+}
+#feedback-overlay.open { display: flex; }
+#feedback-modal {
+  background: #1a1435; border: 1px solid rgba(201,168,76,0.3); border-radius: 12px;
+  padding: 36px; width: 100%; max-width: 480px; position: relative;
+  box-shadow: 0 16px 64px rgba(0,0,0,0.6);
+}
+#feedback-modal h2 { font-family: 'Cinzel', serif; font-size: 20px; font-weight: 700; color: var(--dragon-gold-light); margin-bottom: 6px; }
+#feedback-modal .modal-sub { font-family: 'Crimson Pro', serif; font-size: 14px; font-style: italic; color: var(--silver-light); margin-bottom: 24px; }
+#feedback-modal label { display: block; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--dragon-gold); margin-bottom: 6px; }
+#feedback-modal select, #feedback-modal textarea {
+  width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 6px; padding: 10px 14px; color: var(--parchment);
+  font-family: 'Crimson Pro', serif; font-size: 15px; margin-bottom: 18px; outline: none;
+  transition: border-color 0.2s;
+}
+#feedback-modal select:focus, #feedback-modal textarea:focus { border-color: rgba(201,168,76,0.6); }
+#feedback-modal select option { background: #1a1435; color: var(--parchment); }
+#feedback-modal textarea { resize: vertical; min-height: 120px; }
+.modal-actions { display: flex; gap: 12px; margin-top: 4px; }
+.modal-actions button { flex: 1; padding: 11px 0; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1px; cursor: pointer; border: none; transition: opacity 0.15s; }
+.modal-actions button:hover { opacity: 0.85; }
+#btn-submit { background: var(--dragon-gold); color: var(--ink); }
+#btn-cancel { background: rgba(255,255,255,0.06); color: var(--silver-light); border: 1px solid rgba(255,255,255,0.1) !important; }
+#feedback-close { position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--silver-ley); font-size: 20px; cursor: pointer; padding: 4px; }
+#feedback-close:hover { color: var(--parchment); }
+#feedback-success { display: none; text-align: center; padding: 12px 0 4px; }
+#feedback-success .success-icon { font-size: 40px; margin-bottom: 12px; display: block; }
+#feedback-success p { font-family: 'Crimson Pro', serif; font-size: 16px; color: var(--silver-light); font-style: italic; }
+</style>
+
 <button id="feedback-btn" onclick="document.getElementById('feedback-overlay').classList.add('open')">
   ✦ Leave Feedback
 </button>
 
-<div id="feedback-overlay" onclick="if(event.target===this) closeModal()">
+<div id="feedback-overlay" onclick="if(event.target===this) closeFeedback()">
   <div id="feedback-modal">
-    <button id="feedback-close" onclick="closeModal()">✕</button>
+    <button id="feedback-close" onclick="closeFeedback()">✕</button>
     <h2>Leave Feedback</h2>
     <p class="modal-sub">Your thoughts go directly to Afif.</p>
-
     <div id="feedback-form">
       <label for="fb-name">Your Name</label>
       <select id="fb-name">
         <option value="">— Select your name —</option>
-        <option>Stefan</option>
-        <option>Darja</option>
-        <option>Manuel</option>
-        <option>Charlotte</option>
-        <option>Kevin</option>
-        <option>Ahmad</option>
-        <option>Luso</option>
-        <option>Athia</option>
-        <option>Sashmita</option>
-        <option>Amalin</option>
-        <option>Kyara</option>
-        <option>Other</option>
+        <option>Stefan</option><option>Darja</option><option>Manuel</option>
+        <option>Kyara</option><option>Charlotte</option><option>Kevin</option>
+        <option>Ahmad</option><option>Luso</option><option>Athia</option>
+        <option>Sashmita</option><option>Amalin</option><option>Other</option>
       </select>
-
       <label for="fb-section">Section (optional)</label>
       <select id="fb-section">
         <option value="">— General feedback —</option>
-        <option>01 · Vision</option>
-        <option>02 · Citizenship &amp; Tiers</option>
-        <option>03 · Daily Blessings &amp; Merch</option>
-        <option>04 · Website &amp; Social</option>
-        <option>05 · The Passport</option>
-        <option>06 · Story &amp; AI Anime</option>
-        <option>07 · Roles Summary</option>
+        <option>Vision & North Star</option>
+        <option>Citizenship & Tiers</option>
+        <option>Daily Blessings</option>
+        <option>Tickets & Revenue</option>
+        <option>Herald Newsletter</option>
+        <option>Calendar</option>
+        <option>Merchants & Guilds</option>
+        <option>Story & Anime</option>
+        <option>Royal Succession</option>
+        <option>Team & Roles</option>
+        <option>Roadmap</option>
       </select>
-
       <label for="fb-text">Your Feedback</label>
       <textarea id="fb-text" placeholder="Share your thoughts, questions, or suggestions…"></textarea>
-
       <div class="modal-actions">
-        <button id="btn-cancel" onclick="closeModal()">Cancel</button>
+        <button id="btn-cancel" onclick="closeFeedback()">Cancel</button>
         <button id="btn-submit" onclick="submitFeedback()">Send Feedback ◆</button>
       </div>
     </div>
-
     <div id="feedback-success">
       <span class="success-icon">✦</span>
       <h2 style="margin-bottom:8px;">Feedback sent!</h2>
-      <p>Your email client will open with the message pre-filled. Thanks for helping build the kingdom.</p>
+      <p>Your email client will open with the message pre-filled.</p>
       <div class="modal-actions" style="margin-top:20px;">
-        <button id="btn-cancel" onclick="closeModal()" style="background:rgba(255,255,255,0.06);color:var(--silver-light);border:1px solid rgba(255,255,255,0.1);">Close</button>
+        <button onclick="closeFeedback()" style="background:rgba(255,255,255,0.06);color:var(--silver-light);border:1px solid rgba(255,255,255,0.1);">Close</button>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-// ── Dynamic font loader (CSP allows data: URIs for fonts) ──
-(async function loadFonts() {
-  const BASE = 'https://cdn.jsdelivr.net/npm/@fontsource';
-  const fonts = [
-    ['Cinzel',      400, 'normal', `${BASE}/cinzel@5/files/cinzel-latin-400-normal.woff2`],
-    ['Cinzel',      700, 'normal', `${BASE}/cinzel@5/files/cinzel-latin-700-normal.woff2`],
-    ['Cinzel',      900, 'normal', `${BASE}/cinzel@5/files/cinzel-latin-900-normal.woff2`],
-    ['Inter',       300, 'normal', `${BASE}/inter@5/files/inter-latin-300-normal.woff2`],
-    ['Inter',       400, 'normal', `${BASE}/inter@5/files/inter-latin-400-normal.woff2`],
-    ['Inter',       500, 'normal', `${BASE}/inter@5/files/inter-latin-500-normal.woff2`],
-    ['Inter',       600, 'normal', `${BASE}/inter@5/files/inter-latin-600-normal.woff2`],
-    ['Inter',       700, 'normal', `${BASE}/inter@5/files/inter-latin-700-normal.woff2`],
-    ['Crimson Pro', 300, 'normal', `${BASE}/crimson-pro@5/files/crimson-pro-latin-300-normal.woff2`],
-    ['Crimson Pro', 300, 'italic', `${BASE}/crimson-pro@5/files/crimson-pro-latin-300-italic.woff2`],
-    ['Crimson Pro', 400, 'normal', `${BASE}/crimson-pro@5/files/crimson-pro-latin-400-normal.woff2`],
-    ['Crimson Pro', 400, 'italic', `${BASE}/crimson-pro@5/files/crimson-pro-latin-400-italic.woff2`],
-    ['Crimson Pro', 600, 'normal', `${BASE}/crimson-pro@5/files/crimson-pro-latin-600-normal.woff2`],
-    ['Crimson Pro', 600, 'italic', `${BASE}/crimson-pro@5/files/crimson-pro-latin-600-italic.woff2`],
-  ];
-
-  async function fetchAsDataUri(url) {
-    const res = await fetch(url);
-    const buf = await res.arrayBuffer();
-    const bytes = new Uint8Array(buf);
-    let binary = '';
-    for (let i = 0; i < bytes.byteLength; i++) binary += String.fromCharCode(bytes[i]);
-    return 'data:font/woff2;base64,' + btoa(binary);
-  }
-
-  await Promise.all(fonts.map(async ([family, weight, style, url]) => {
-    try {
-      const dataUri = await fetchAsDataUri(url);
-      const face = new FontFace(family, `url(${dataUri})`, { weight: String(weight), style });
-      await face.load();
-      document.fonts.add(face);
-    } catch(e) {
-      console.warn('Font failed:', family, weight, style, e.message);
-    }
-  }));
-})();
-
-function closeModal() {
+function closeFeedback() {
   document.getElementById('feedback-overlay').classList.remove('open');
-  // reset after close
   setTimeout(() => {
     document.getElementById('feedback-form').style.display = '';
     document.getElementById('feedback-success').style.display = 'none';
     document.getElementById('fb-text').value = '';
   }, 300);
 }
-
 function submitFeedback() {
   const name = document.getElementById('fb-name').value || 'Team member';
   const section = document.getElementById('fb-section').value;
   const text = document.getElementById('fb-text').value.trim();
-
   if (!text) {
     document.getElementById('fb-text').style.borderColor = 'rgba(196,74,36,0.8)';
     document.getElementById('fb-text').placeholder = 'Please write your feedback first…';
     return;
   }
-
-  const subject = encodeURIComponent('Elfia Playbook 2026 — Feedback' + (section ? ': ' + section : ''));
-  const body = encodeURIComponent(
-    'From: ' + name + '\n' +
-    (section ? 'Section: ' + section + '\n' : '') +
-    '\n' + text
-  );
-
+  const subject = encodeURIComponent('Elfia Strategy 2026 — Feedback' + (section ? ': ' + section : ''));
+  const body = encodeURIComponent('From: ' + name + '\n' + (section ? 'Section: ' + section + '\n' : '') + '\n' + text);
   window.open('mailto:afif@elfiasg.com?subject=' + subject + '&body=' + body);
-
   document.getElementById('feedback-form').style.display = 'none';
   document.getElementById('feedback-success').style.display = 'block';
 }
