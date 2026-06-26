@@ -1562,15 +1562,9 @@
   </div>
 </section>
 
-<!-- ============================================================ CLOSING SCRIPT -->
-<script>
-  function switchTab(name) {
-    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.nav-tab').forEach(t => {
-      if (t.getAttribute('onclick') === "switchTab('" + name + "')") t.classList.add('active');
-
 </main>
+
+<!-- ============================================================ CLOSING SCRIPT -->
 
 <script>
   function switchTab(name) {
