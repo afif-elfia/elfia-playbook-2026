@@ -1586,62 +1586,39 @@
 
 <!-- ── FEEDBACK WIDGET ── -->
 <style>
-#feedback-btn {
-  position: fixed; bottom: 28px; right: 28px; z-index: 1000;
-  background: var(--dragon-gold); color: var(--ink);
-  border: none; border-radius: 50px; padding: 12px 22px;
-  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1px;
-  cursor: pointer; box-shadow: 0 4px 24px rgba(201,168,76,0.4);
-  display: flex; align-items: center; gap: 8px;
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-#feedback-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 32px rgba(201,168,76,0.55); }
-#feedback-overlay {
-  display: none; position: fixed; inset: 0;
-  background: rgba(0,0,0,0.65); z-index: 1001;
-  align-items: center; justify-content: center; padding: 24px;
-}
-#feedback-overlay.open { display: flex; }
-#feedback-modal {
-  background: #1a1435; border: 1px solid rgba(201,168,76,0.3); border-radius: 12px;
-  padding: 36px; width: 100%; max-width: 480px; position: relative;
-  box-shadow: 0 16px 64px rgba(0,0,0,0.6);
-}
-#feedback-modal h2 { font-family: 'Cinzel', serif; font-size: 20px; font-weight: 700; color: var(--dragon-gold-light); margin-bottom: 6px; }
-#feedback-modal .modal-sub { font-family: 'Crimson Pro', serif; font-size: 14px; font-style: italic; color: var(--silver-light); margin-bottom: 24px; }
-#feedback-modal label { display: block; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--dragon-gold); margin-bottom: 6px; }
-#feedback-modal select, #feedback-modal textarea {
-  width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2);
-  border-radius: 6px; padding: 10px 14px; color: var(--parchment);
-  font-family: 'Crimson Pro', serif; font-size: 15px; margin-bottom: 18px; outline: none;
-  transition: border-color 0.2s;
-}
-#feedback-modal select:focus, #feedback-modal textarea:focus { border-color: rgba(201,168,76,0.6); }
-#feedback-modal select option { background: #1a1435; color: var(--parchment); }
-#feedback-modal textarea { resize: vertical; min-height: 120px; }
-.modal-actions { display: flex; gap: 12px; margin-top: 4px; }
-.modal-actions button { flex: 1; padding: 11px 0; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1px; cursor: pointer; border: none; transition: opacity 0.15s; }
-.modal-actions button:hover { opacity: 0.85; }
-#btn-submit { background: var(--dragon-gold); color: var(--ink); }
-#btn-cancel { background: rgba(255,255,255,0.06); color: var(--silver-light); border: 1px solid rgba(255,255,255,0.1) !important; }
-#feedback-close { position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--silver-ley); font-size: 20px; cursor: pointer; padding: 4px; }
-#feedback-close:hover { color: var(--parchment); }
-#feedback-success { display: none; text-align: center; padding: 12px 0 4px; }
-#feedback-success .success-icon { font-size: 40px; margin-bottom: 12px; display: block; }
-#feedback-success p { font-family: 'Crimson Pro', serif; font-size: 16px; color: var(--silver-light); font-style: italic; }
+#feedback-btn{position:fixed;bottom:28px;right:28px;z-index:1000;background:var(--dragon-gold);color:var(--ink);border:none;border-radius:50px;padding:12px 22px;font-family:"Inter",sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;cursor:pointer;box-shadow:0 4px 24px rgba(201,168,76,0.4);display:flex;align-items:center;gap:8px;transition:transform .15s,box-shadow .15s;}
+#feedback-btn:hover{transform:translateY(-2px);box-shadow:0 6px 32px rgba(201,168,76,0.55);}
+#feedback-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:1001;align-items:center;justify-content:center;padding:24px;}
+#feedback-overlay.open{display:flex;}
+#feedback-modal{background:#1a1435;border:1px solid rgba(201,168,76,0.3);border-radius:12px;padding:36px;width:100%;max-width:480px;position:relative;box-shadow:0 16px 64px rgba(0,0,0,0.6);}
+#feedback-modal h2{font-family:"Cinzel",serif;font-size:20px;font-weight:700;color:var(--dragon-gold-light);margin-bottom:6px;}
+#feedback-modal .modal-sub{font-family:"Crimson Pro",serif;font-size:14px;font-style:italic;color:var(--silver-light);margin-bottom:24px;}
+#feedback-modal label{display:block;font-family:"Inter",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dragon-gold);margin-bottom:6px;}
+#feedback-modal select,#feedback-modal textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:6px;padding:10px 14px;color:var(--parchment);font-family:"Crimson Pro",serif;font-size:15px;margin-bottom:18px;outline:none;transition:border-color .2s;}
+#feedback-modal select:focus,#feedback-modal textarea:focus{border-color:rgba(201,168,76,0.6);}
+#feedback-modal select option{background:#1a1435;color:var(--parchment);}
+#feedback-modal textarea{resize:vertical;min-height:120px;}
+.fb-actions{display:flex;gap:12px;margin-top:4px;}
+.fb-actions button{flex:1;padding:11px 0;border-radius:6px;font-family:"Inter",sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;cursor:pointer;border:none;transition:opacity .15s;}
+.fb-actions button:hover{opacity:.85;}
+#fb-submit{background:var(--dragon-gold);color:var(--ink);}
+#fb-cancel{background:rgba(255,255,255,0.06);color:var(--silver-light);border:1px solid rgba(255,255,255,0.1)!important;}
+#fb-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--silver-ley);font-size:20px;cursor:pointer;padding:4px;}
+#fb-close:hover{color:var(--parchment);}
+#fb-success{display:none;text-align:center;padding:12px 0 4px;}
+#fb-success .si{font-size:40px;margin-bottom:12px;display:block;}
+#fb-success p{font-family:"Crimson Pro",serif;font-size:16px;color:var(--silver-light);font-style:italic;}
 </style>
 
-<button id="feedback-btn" onclick="document.getElementById('feedback-overlay').classList.add('open')">
-  ✦ Leave Feedback
-</button>
+<button id="feedback-btn" onclick="document.getElementById('feedback-overlay').classList.add('open')">✦ Leave Feedback</button>
 
-<div id="feedback-overlay" onclick="if(event.target===this) closeFeedback()">
+<div id="feedback-overlay" onclick="if(event.target===this)fbClose()">
   <div id="feedback-modal">
-    <button id="feedback-close" onclick="closeFeedback()">✕</button>
+    <button id="fb-close" onclick="fbClose()">✕</button>
     <h2>Leave Feedback</h2>
     <p class="modal-sub">Your thoughts go directly to Afif.</p>
-    <div id="feedback-form">
-      <label for="fb-name">Your Name</label>
+    <div id="fb-form">
+      <label>Your Name</label>
       <select id="fb-name">
         <option value="">— Select your name —</option>
         <option>Stefan</option><option>Darja</option><option>Manuel</option>
@@ -1649,64 +1626,36 @@
         <option>Ahmad</option><option>Luso</option><option>Athia</option>
         <option>Sashmita</option><option>Amalin</option><option>Other</option>
       </select>
-      <label for="fb-section">Section (optional)</label>
+      <label>Section (optional)</label>
       <select id="fb-section">
         <option value="">— General feedback —</option>
-        <option>Vision & North Star</option>
-        <option>Citizenship & Tiers</option>
-        <option>Daily Blessings</option>
-        <option>Tickets & Revenue</option>
-        <option>Herald Newsletter</option>
-        <option>Calendar</option>
-        <option>Merchants & Guilds</option>
-        <option>Story & Anime</option>
-        <option>Royal Succession</option>
-        <option>Team & Roles</option>
-        <option>Roadmap</option>
+        <option>Vision &amp; North Star</option><option>Citizenship &amp; Tiers</option>
+        <option>Daily Blessings</option><option>Tickets &amp; Revenue</option>
+        <option>Herald Newsletter</option><option>Calendar</option>
+        <option>Merchants &amp; Guilds</option><option>Story &amp; Anime</option>
+        <option>Royal Succession</option><option>Team &amp; Roles</option><option>Roadmap</option>
       </select>
-      <label for="fb-text">Your Feedback</label>
+      <label>Your Feedback</label>
       <textarea id="fb-text" placeholder="Share your thoughts, questions, or suggestions…"></textarea>
-      <div class="modal-actions">
-        <button id="btn-cancel" onclick="closeFeedback()">Cancel</button>
-        <button id="btn-submit" onclick="submitFeedback()">Send Feedback ◆</button>
+      <div class="fb-actions">
+        <button id="fb-cancel" onclick="fbClose()">Cancel</button>
+        <button id="fb-submit" onclick="fbSubmit()">Send Feedback ◆</button>
       </div>
     </div>
-    <div id="feedback-success">
-      <span class="success-icon">✦</span>
+    <div id="fb-success">
+      <span class="si">✦</span>
       <h2 style="margin-bottom:8px;">Feedback sent!</h2>
       <p>Your email client will open with the message pre-filled.</p>
-      <div class="modal-actions" style="margin-top:20px;">
-        <button onclick="closeFeedback()" style="background:rgba(255,255,255,0.06);color:var(--silver-light);border:1px solid rgba(255,255,255,0.1);">Close</button>
+      <div class="fb-actions" style="margin-top:20px;">
+        <button onclick="fbClose()" style="background:rgba(255,255,255,0.06);color:var(--silver-light);border:1px solid rgba(255,255,255,0.1);">Close</button>
       </div>
     </div>
   </div>
 </div>
-
 <script>
-function closeFeedback() {
-  document.getElementById('feedback-overlay').classList.remove('open');
-  setTimeout(() => {
-    document.getElementById('feedback-form').style.display = '';
-    document.getElementById('feedback-success').style.display = 'none';
-    document.getElementById('fb-text').value = '';
-  }, 300);
-}
-function submitFeedback() {
-  const name = document.getElementById('fb-name').value || 'Team member';
-  const section = document.getElementById('fb-section').value;
-  const text = document.getElementById('fb-text').value.trim();
-  if (!text) {
-    document.getElementById('fb-text').style.borderColor = 'rgba(196,74,36,0.8)';
-    document.getElementById('fb-text').placeholder = 'Please write your feedback first…';
-    return;
-  }
-  const subject = encodeURIComponent('Elfia Strategy 2026 — Feedback' + (section ? ': ' + section : ''));
-  const body = encodeURIComponent('From: ' + name + '\n' + (section ? 'Section: ' + section + '\n' : '') + '\n' + text);
-  window.open('mailto:afif@elfiasg.com?subject=' + subject + '&body=' + body);
-  document.getElementById('feedback-form').style.display = 'none';
-  document.getElementById('feedback-success').style.display = 'block';
-}
-</script>
+function fbClose(){document.getElementById("feedback-overlay").classList.remove("open");setTimeout(()=>{document.getElementById("fb-form").style.display="";document.getElementById("fb-success").style.display="none";document.getElementById("fb-text").value="";},300);}
+function fbSubmit(){const name=document.getElementById("fb-name").value||"Team member";const section=document.getElementById("fb-section").value;const text=document.getElementById("fb-text").value.trim();if(!text){document.getElementById("fb-text").style.borderColor="rgba(196,74,36,0.8)";document.getElementById("fb-text").placeholder="Please write your feedback first…";return;}const s=encodeURIComponent("Elfia Strategy 2026 — Feedback"+(section?": "+section:""));const b=encodeURIComponent("From: "+name+"\n"+(section?"Section: "+section+"\n":"")+"\n"+text);window.open("mailto:afif@elfiasg.com?subject="+s+"&body="+b);document.getElementById("fb-form").style.display="none";document.getElementById("fb-success").style.display="block";}
+<\/script>
 
 </body>
 </html>
